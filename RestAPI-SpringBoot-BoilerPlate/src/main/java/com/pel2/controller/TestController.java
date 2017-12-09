@@ -34,7 +34,9 @@ public class TestController {
 	
 	@RequestMapping(value = "/details" , method = RequestMethod.POST)
 	public Employee getEmployee(@RequestBody String id){
-		return testService.getEmployee(id);
+		Employee responseObj = testService.getEmployee(id);
+		System.out.println("TestController.getEmployee()"+responseObj.toString());
+		return responseObj;
 	}
 	
 
