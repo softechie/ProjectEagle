@@ -15,28 +15,40 @@ import com.pel2.dto.Employee;
 @Component
 public class TestDataSimulator  {
 	
-	public Employee getEmployee(String id){
-		Employee employee = new Employee();
-    	employee.setEmpId("10000");
-    	employee.setName("Jhon Miller");
-        return employee;
+	List<Employee> emp = new ArrayList<Employee>();
+	
+	public Employee getEmployee(String id) {	
+		System.out.println("TestDataSimulator.getEmployee(id):: id recieved ="+id);
+		Employee employee = null;
+		if (emp != null) {			
+			for (int i=0;i<emp.size();i++) {
+				Employee iteratorObj = emp.get(i);
+				if (iteratorObj.getEmpId().equals(id)) {
+					employee = iteratorObj;
+					break;
+				}
+			}
+			return employee;
+		} else			
+			return null;
+		
 	}
 	
-	public List<Employee> getEmployees(){
-		
-		List<Employee> emp = new ArrayList<Employee>();
+	public List<Employee> getEmployees(){		
 		Employee employee1 = new Employee();
     	employee1.setEmpId("5000");
-    	employee1.setName("Hunk Luner");
-    	
+    	employee1.setName("Hunk Lawrence");    	
     	emp.add(employee1);
     	
 		Employee employee2 = new Employee();
     	employee2.setEmpId("2000");
-    	employee2.setName("Kethie Bell");
-    	
+    	employee2.setName("Keith Bell");    	
     	emp.add(employee2);
     	
+    	Employee employee3 = new Employee();
+    	employee3.setEmpId("10000");
+    	employee3.setName("John Miller");        
+    	emp.add(employee3);
         return emp;
 	}
 }
