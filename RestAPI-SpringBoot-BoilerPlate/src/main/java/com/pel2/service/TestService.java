@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pel2.dao.TestDao;
+import com.pel2.dao.TestDataSimulator;
 import com.pel2.dto.Employee;
 
 /**
@@ -16,10 +16,12 @@ import com.pel2.dto.Employee;
 public class TestService {
 	
 	/**
-	 * Once DB is up and employee data available, use Employee Dao class to get the data from DB.
+	 * Once Database is available, uncomment EmployeeDao class reference to get the data from DB. Currently it is retrieving 
+	 * the data from the simulator class "TestDataSimulator"
 	 */
 	@Autowired
 	TestDataSimulator employeeDao;
+	//EmployeeDao employeeDao;
 
 	/**
 	 * Add the business logic if any for get Employees.
