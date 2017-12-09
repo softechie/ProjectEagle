@@ -21,6 +21,7 @@ public class TestDataSimulator  {
 	EmployeeDao employeeDaoImpl;
 	
 	public Employee getEmployee(String id){
+		//return employeeDaoImpl.getEmployee(id);
 		Employee employee = new Employee();
     	employee.setEmpId("10000");
     	employee.setName("Jhon Miller");
@@ -28,6 +29,8 @@ public class TestDataSimulator  {
 	}
 	
 	public List<Employee> getEmployees(){
+		//List<Employee> emp = new ArrayList<Employee>();
+		//emp=employeeDaoImpl.getEmployees();
 		
 		List<Employee> emp = new ArrayList<Employee>();
 		Employee employee1 = new Employee();
@@ -45,7 +48,7 @@ public class TestDataSimulator  {
         return emp;
 	}
 
-	public void saveEmployee(Employee emp) throws SQLException {
+	/*public void saveEmployee(Employee emp) throws SQLException {
 		employeeDaoImpl.saveEmployee(emp);
-	}
+	}*/
 }
