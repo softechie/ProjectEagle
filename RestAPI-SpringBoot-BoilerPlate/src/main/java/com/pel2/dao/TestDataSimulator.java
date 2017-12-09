@@ -1,8 +1,10 @@
 package com.pel2.dao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pel2.dto.Employee;
@@ -14,6 +16,9 @@ import com.pel2.dto.Employee;
  */
 @Component
 public class TestDataSimulator  {
+	
+	@Autowired
+	EmployeeDao employeeDaoImpl;
 	
 	public Employee getEmployee(String id){
 		Employee employee = new Employee();
@@ -38,5 +43,9 @@ public class TestDataSimulator  {
     	emp.add(employee2);
     	
         return emp;
+	}
+
+	public void saveEmployee(Employee emp) throws SQLException {
+		employeeDaoImpl.saveEmployee(emp);
 	}
 }

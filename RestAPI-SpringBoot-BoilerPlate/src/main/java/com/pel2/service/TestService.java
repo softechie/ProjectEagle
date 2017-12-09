@@ -1,11 +1,12 @@
 package com.pel2.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pel2.dao.TestDao;
+import com.pel2.dao.TestDataSimulator;
 import com.pel2.dto.Employee;
 
 /**
@@ -31,5 +32,10 @@ public class TestService {
 
 	public Employee getEmployee(String id) {
 		return employeeDao.getEmployee(id);
+	}
+	
+	 
+	public void saveEmployee(Employee emp) throws SQLException {
+	      employeeDao.saveEmployee(emp);
 	}
 }
