@@ -1,10 +1,8 @@
 package com.pel2.dao;
 
-//import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pel2.dto.Employee;
@@ -33,16 +31,6 @@ public class TestDataSimulator  {
 			return employee;
 		} else			
 			return null;
-//
-//	@Autowired
-//	EmployeeDao employeeDaoImpl;
-//	
-//	public Employee getEmployee(String id){
-//		//return employeeDaoImpl.getEmployee(id);
-//		Employee employee = new Employee();
-//    	employee.setEmpId("10000");
-//    	employee.setName("Jhon Miller");
-//        return employee;
 	}
 	
     public List<Employee> getEmployees(){		
@@ -61,8 +49,6 @@ public class TestDataSimulator  {
     	employee3.setName("John Miller");        
     	emp.add(employee3);
         return emp;
-	}
-    
-    
+	} 
 
 }
