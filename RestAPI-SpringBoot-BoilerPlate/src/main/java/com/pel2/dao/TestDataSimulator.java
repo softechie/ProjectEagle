@@ -3,9 +3,11 @@ package com.pel2.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.pel2.dto.Employee;
+import com.pel2.main.EmployeeRepository;
 
 /**
  * @author mbaransln
@@ -15,6 +17,9 @@ import com.pel2.dto.Employee;
 @Component
 public class TestDataSimulator  {
 		
+	//@Autowired
+	//private EmployeeRepository repo;
+	
 	List<Employee> emp = new ArrayList<Employee>();
 	
 	public Employee getEmployee(String id) {	
@@ -34,6 +39,7 @@ public class TestDataSimulator  {
 	}
 	
     public List<Employee> getEmployees(){
+    	//System.out.println(repo.findAll());
     	emp = new ArrayList<Employee>();
 		Employee employee1 = new Employee();
     	employee1.setEmpId("5000");
