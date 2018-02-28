@@ -33,7 +33,8 @@ public class TestDataSimulator  {
 			return null;
 	}
 	
-    public List<Employee> getEmployees(){		
+    public List<Employee> getEmployees(){
+    	emp = new ArrayList<Employee>();
 		Employee employee1 = new Employee();
     	employee1.setEmpId("5000");
     	employee1.setName("Hunk Lawrence");    	
