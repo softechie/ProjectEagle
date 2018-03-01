@@ -2,19 +2,21 @@ package com.pel2.dto;
 
 import org.springframework.data.annotation.Id;
 
-
 public class Job {
 
     @Id
     public String id;
 
+    public String category;
     public String type;
     public int state;
     public int priority;
     public Job[] dependencies;
 
-    public Job(String id, String type, int state, int priority, Job[] dependencies) {
-		this.id = id;
+	public Job() {}
+	public Job(String category, String type, int state, int priority, Job[] dependencies) {
+		super();
+		this.category = category;
 		this.type = type;
 		this.state = state;
 		this.priority = priority;
@@ -25,6 +27,12 @@ public class Job {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public String getType() {
 		return type;
@@ -53,8 +61,8 @@ public class Job {
 	@Override
     public String toString() {
         return String.format(
-                "Job[id=%s, type='%s', state='%d', priority='%d', dependencies='%s']",
-                id, type, state, priority, dependencies);
+                "Job[id=%s, category='%s', type='%s', state='%d', priority='%d', dependencies='%s']",
+                id, category, type, state, priority, dependencies);
     }
 	
 }
