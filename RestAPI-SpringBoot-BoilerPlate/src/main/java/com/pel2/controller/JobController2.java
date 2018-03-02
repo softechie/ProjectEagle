@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.pel2.dao.JobDao;
-import com.pel2.dto.Job;
+import com.pel2.dao.JobDao2;
+import com.pel2.dto.Job2;
 
 /**
  * @author mbaransln
@@ -25,20 +25,20 @@ import com.pel2.dto.Job;
  *
  */
 @RestController
-@RequestMapping( value = "/job")
-public class JobController {	
+@RequestMapping( value = "/job2")
+public class JobController2 {	
 	
 	//Service class implements the Business logic and interact with other services/DAO based on the requirement.
 	@Autowired
-	private JobDao jobDao;
+	private JobDao2 jobDao2;
 	
 //	@RequestMapping(value = "/all", method = RequestMethod.GET)
 //	public List<Employee> getEmployees(){
 //		return testService.getEmployees();
 //	}
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Job> getJobs(){
-		return jobDao.getJobs();
+	public List<Job2> getJobs(){
+		return jobDao2.getJobs();
 	}
 	
 //	@RequestMapping(value = "/details" , method = RequestMethod.POST)

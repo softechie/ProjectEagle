@@ -3,23 +3,26 @@ package com.pel2.dto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "jobs")
-public class Job {
+@Document(collection = "jobs2")
+public class Job2 {
 
     @Id
     public String id;
 
     public String category;
     public String type;
+    public String ref;
     public int state;
     public int priority;
-    public Job[] dependencies;
+    public String[] dependencies;
 
-	public Job() {}
-	public Job(String category, String type, int state, int priority, Job[] dependencies) {
+	public Job2() {}
+	public Job2(String id, String category, String type, String ref, int state, int priority, String[] dependencies) {
 		super();
+		this.id = id;
 		this.category = category;
 		this.type = type;
+		this.ref = ref;
 		this.state = state;
 		this.priority = priority;
 		this.dependencies = dependencies;
@@ -42,6 +45,12 @@ public class Job {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public String getRef() {
+		return ref;
+	}
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
 	public int getState() {
 		return state;
 	}
@@ -54,17 +63,17 @@ public class Job {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	public Job[] getDependencies() {
+	public String[] getDependencies() {
 		return dependencies;
 	}
-	public void setDependencies(Job[] dependencies) {
+	public void setDependencies(String[] dependencies) {
 		this.dependencies = dependencies;
 	}
 	@Override
     public String toString() {
         return String.format(
-                "Job[id=%s, category='%s', type='%s', state='%d', priority='%d', dependencies='%s']",
-                id, category, type, state, priority, dependencies);
+                "Job[id=%s, category='%s', type='%s', ref='%s', state='%d', priority='%d', dependencies='%s']",
+                id, category, type, ref, state, priority, dependencies);
     }
 	
 }
