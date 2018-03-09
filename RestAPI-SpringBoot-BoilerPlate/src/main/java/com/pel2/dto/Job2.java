@@ -13,18 +13,18 @@ public class Job2 {
     public String type;
     public String ref;
     public int state;
-    public int priority;
+    public int scheduled;
     public String[] dependencies;
 
 	public Job2() {}
-	public Job2(String id, String category, String type, String ref, int state, int priority, String[] dependencies) {
+	public Job2(String id, String category, String type, String ref, int state, int scheduled, String[] dependencies) {
 		super();
 		this.id = id;
 		this.category = category;
 		this.type = type;
 		this.ref = ref;
 		this.state = state;
-		this.priority = priority;
+		this.scheduled = scheduled;
 		this.dependencies = dependencies;
 	}
 	public String getId() {
@@ -57,11 +57,11 @@ public class Job2 {
 	public void setState(int state) {
 		this.state = state;
 	}
-	public int getPriority() {
-		return priority;
+	public int getScheduled() {
+		return scheduled;
 	}
-	public void setPriority(int priority) {
-		this.priority = priority;
+	public void setScheduled(int scheduled) {
+		this.scheduled = scheduled;
 	}
 	public String[] getDependencies() {
 		return dependencies;
@@ -72,8 +72,8 @@ public class Job2 {
 	@Override
     public String toString() {
         return String.format(
-                "Job[id=%s, category='%s', type='%s', ref='%s', state='%d', priority='%d', dependencies='%s']",
-                id, category, type, ref, state, priority, dependencies);
+                "Job[id=%s, category='%s', type='%s', ref='%s', state='%d', scheduled='%d', dependencies='%s']",
+                id, category, type, ref, state, scheduled, dependencies);
     }
 	
 }

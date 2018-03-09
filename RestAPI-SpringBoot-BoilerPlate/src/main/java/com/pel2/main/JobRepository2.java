@@ -9,5 +9,4 @@ public interface JobRepository2 extends MongoRepository<Job2, String> {
 	public List<Job2> findAll();
 	public Job2 findByRef(String ref);
 	public Job2 findById(String id);
-
 }
