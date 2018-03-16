@@ -3,7 +3,6 @@ package com.pel2.dto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "jobs")
 public class Job {
 
     @Id
@@ -11,17 +10,20 @@ public class Job {
 
     public String category;
     public String type;
+    public String ref;
     public int state;
-    public int priority;
-    public Job[] dependencies;
+    public int scheduled;
+    public String[] dependencies;
 
 	public Job() {}
-	public Job(String category, String type, int state, int priority, Job[] dependencies) {
+	public Job(String id, String category, String type, String ref, int state, int scheduled, String[] dependencies) {
 		super();
+		this.id = id;
 		this.category = category;
 		this.type = type;
+		this.ref = ref;
 		this.state = state;
-		this.priority = priority;
+		this.scheduled = scheduled;
 		this.dependencies = dependencies;
 	}
 	public String getId() {
@@ -42,29 +44,34 @@ public class Job {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public String getRef() {
+		return ref;
+	}
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
 	public int getState() {
 		return state;
 	}
 	public void setState(int state) {
 		this.state = state;
 	}
-	public int getPriority() {
-		return priority;
+	public int getScheduled() {
+		return scheduled;
 	}
-	public void setPriority(int priority) {
-		this.priority = priority;
+	public void setScheduled(int scheduled) {
+		this.scheduled = scheduled;
 	}
-	public Job[] getDependencies() {
+	public String[] getDependencies() {
 		return dependencies;
 	}
-	public void setDependencies(Job[] dependencies) {
+	public void setDependencies(String[] dependencies) {
 		this.dependencies = dependencies;
 	}
 	@Override
     public String toString() {
         return String.format(
-                "Job[id=%s, category='%s', type='%s', state='%d', priority='%d', dependencies='%s']",
-                id, category, type, state, priority, dependencies);
+                "Job[id=%s, category='%s', type='%s', ref='%s', state='%d', scheduled='%d', dependencies='%s']",
+                id, category, type, ref, state, scheduled, dependencies);
     }
-	
 }

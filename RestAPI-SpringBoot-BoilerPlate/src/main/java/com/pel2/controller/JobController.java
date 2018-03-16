@@ -19,49 +19,15 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.pel2.dao.JobDao;
 import com.pel2.dto.Job;
 
-/**
- * @author mbaransln
- * Below is the test Controller to create other controller classes based on your requirements.
- *
- */
 @RestController
 @RequestMapping( value = "/job")
 public class JobController {	
 	
-	//Service class implements the Business logic and interact with other services/DAO based on the requirement.
 	@Autowired
 	private JobDao jobDao;
 	
-//	@RequestMapping(value = "/all", method = RequestMethod.GET)
-//	public List<Employee> getEmployees(){
-//		return testService.getEmployees();
-//	}
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<Job> getJobs(){
 		return jobDao.getJobs();
 	}
-	
-//	@RequestMapping(value = "/details" , method = RequestMethod.POST)
-//	public Employee getEmployee(@RequestBody String id){
-//		Employee responseObj = testService.getEmployee(id);
-//		System.out.println("TestController.getEmployee()"+responseObj.toString());
-//		return responseObj;
-//	}
-	
-//	@PostMapping(value = "/emp")
-//    public ResponseEntity<Void> addEmployee(@RequestBody Employee emp) throws SQLException {
-//				 
-//		if (emp == null)
-//			return ResponseEntity.noContent().build();
-//		
-//		testService.saveEmployee(emp);
-//		
-//		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
-//				"/{empId}").buildAndExpand(emp.getEmpId()).toUri();
-//
-//		return ResponseEntity.created(location).build();
-//		
-//   }
-
-
 }

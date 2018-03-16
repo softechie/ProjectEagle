@@ -1,0 +1,113 @@
+[
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 1",
+    "ref":"JOB1",
+    "state":0,
+    "scheduled":0,
+    "dependencies":
+    [
+      {"ref":"JOB2"},
+      {"ref":"JOB4"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 2",
+    "ref":"JOB2",
+    "state":0,
+    "scheduled":0,
+    "dependencies":
+    [
+      {"ref":"JOB3"},
+      {"ref":"JOB4"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 3",
+    "ref":"JOB3",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref":"JOB5"},
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 4",
+    "ref":"JOB4",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref":"JOB5"},
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 5",
+    "ref":"JOB5",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 9",
+    "ref":"JOB9",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref":"JOB10"},
+      {"ref":"JOB11"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 10",
+    "ref":"JOB10",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref":"JOB5"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 11",
+    "ref":"JOB11",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref":"JOB8"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 6",
+    "ref":"JOB6",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref": "JOB7"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 7",
+    "ref":"JOB7",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[
+      {"ref": "JOB8"}
+    ]
+  },
+  {
+    "category":"JobsToRun",
+    "type":"Job Number 8",
+    "ref":"JOB8",
+    "state":0,
+    "scheduled":0,
+    "dependencies":[]
+  },
+]
