@@ -20,14 +20,9 @@ import com.aftt.dto.Job2;
 @RequestMapping( value = "/job2")
 public class JobController2 {	
 	
-	//Service class implements the Business logic and interact with other services/DAO based on the requirement.
 	@Autowired
 	private JobDao2 jobDao2;
-	
-//	@RequestMapping(value = "/all", method = RequestMethod.GET)
-//	public List<Employee> getEmployees(){
-//		return testService.getEmployees();
-//	}
+
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<Job2> getJobs(){
 		return jobDao2.getJobs();
