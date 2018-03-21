@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.pel2.controller;
+package com.aftt.controller;
 
 import java.net.URI;
 import java.sql.SQLException;
@@ -16,29 +16,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.pel2.dao.JobDao2;
-import com.pel2.dto.Job2;
+import com.aftt.dao.EmployeeDao;
+import com.aftt.dto.Employee;
 
-/**
- * @author mbaransln
- * Below is the test Controller to create other controller classes based on your requirements.
- *
- */
 @RestController
-@RequestMapping( value = "/job2")
-public class JobController2 {	
+@RequestMapping( value = "/employee")
+public class EmployeeController {	
 	
 	//Service class implements the Business logic and interact with other services/DAO based on the requirement.
 	@Autowired
-	private JobDao2 jobDao2;
+	EmployeeDao empDao;	
 	
 //	@RequestMapping(value = "/all", method = RequestMethod.GET)
 //	public List<Employee> getEmployees(){
 //		return testService.getEmployees();
 //	}
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Job2> getJobs(){
-		return jobDao2.getJobs();
+	public List<Employee> getEmployees(){
+		return empDao.getEmployees();
 	}
 	
 //	@RequestMapping(value = "/details" , method = RequestMethod.POST)
@@ -62,6 +57,4 @@ public class JobController2 {
 //		return ResponseEntity.created(location).build();
 //		
 //   }
-
-
 }

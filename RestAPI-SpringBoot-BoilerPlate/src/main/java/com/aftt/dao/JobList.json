@@ -30,7 +30,7 @@
     "state":0,
     "scheduled":0,
     "dependencies":[
-      {"ref":"JOB5"},
+      {"ref":"JOB5"}
     ]
   },
   {
@@ -40,7 +40,7 @@
     "state":0,
     "scheduled":0,
     "dependencies":[
-      {"ref":"JOB5"},
+      {"ref":"JOB5"}
     ]
   },
   {
@@ -109,5 +109,5 @@
     "state":0,
     "scheduled":0,
     "dependencies":[]
-  },
+  }
 ]

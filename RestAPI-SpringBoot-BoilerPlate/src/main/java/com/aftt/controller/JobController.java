@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.pel2.controller;
+package com.aftt.controller;
 
 import java.net.URI;
 import java.sql.SQLException;
@@ -16,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.pel2.dao.JobDao;
-import com.pel2.dto.Job;
+import com.aftt.dao.JobDao;
+import com.aftt.dto.Job;
 
 @RestController
 @RequestMapping( value = "/job")

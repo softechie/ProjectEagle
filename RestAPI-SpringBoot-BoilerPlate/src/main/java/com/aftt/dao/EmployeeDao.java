@@ -1,4 +1,4 @@
-package com.pel2.dao;
+package com.aftt.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pel2.dto.Employee;
-import com.pel2.main.EmployeeRepository;
+import com.aftt.dto.Employee;
+import com.aftt.main.EmployeeRepository;
 
 @Component
 public class EmployeeDao  {

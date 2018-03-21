@@ -1,13 +1,8 @@
-package com.pel2.dto;
+package com.aftt.dto;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * @author mbaransln
- * Data transfer object being used by API to transfer the Employee data over network.
- *
- */
 @Document(collection = "employees")
 public class Employee {
 	

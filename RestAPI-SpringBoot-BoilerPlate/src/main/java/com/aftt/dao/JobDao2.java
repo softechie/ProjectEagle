@@ -1,4 +1,4 @@
-package com.pel2.dao;
+package com.aftt.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,9 @@ import java.util.List;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.pel2.dto.Job2;
-import com.pel2.main.JobRepository2;
+
+import com.aftt.dto.Job2;
+import com.aftt.main.JobRepository2;
 
 @Component
 public class JobDao2  {
@@ -23,7 +24,7 @@ public class JobDao2  {
 		jobList = new ArrayList<Job2>();
 				
 		for (Job2 job : repository.findAll()) {
-			addJob(job);
+			addJobToArray(job);
 		}
 		
 		final long endTime = System.currentTimeMillis();
@@ -37,7 +38,7 @@ public class JobDao2  {
 		return jobList;
 	}
 	
-	private void addJob(Job2 job) {
+	private void addJobToArray(Job2 job) {
 		job = repository.findById(job.getId());
 		if (job.getDependencies().length==0) {
 			if (job.getState()==0) {
@@ -50,12 +51,19 @@ public class JobDao2  {
 			if (job.getState()==0) {
 				for (int i=0; i < job.getDependencies().length; i++) {
 					Job2 job2Add = repository.findByRef(new JSONObject(job.getDependencies()[i]).getString("ref"));
-						addJob(job2Add);
+						addJobToArray(job2Add);
 				}
 				job.setState(1);
 				jobList.add(job);
 				repository.save(job);
 			}
 		}
+	}
+	
+	public void addJobs(List<Job2> jobList) {
+		repository.insert(jobList);
+	}
+	public void deleteAllJobs() {
+		repository.deleteAll();
 	}
 }

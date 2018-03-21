@@ -1,11 +1,11 @@
-package com.pel2.main;
+package com.aftt.main;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.pel2.dto.Employee;
+import com.aftt.dto.Employee;
 
 
 public interface EmployeeRepository extends MongoRepository<Employee, String> {

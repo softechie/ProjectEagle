@@ -1,4 +1,4 @@
-package com.pel2.consumer;
+package com.aftt.consumer;
 
 //import java.util.HashMap;
 

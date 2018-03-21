@@ -1,4 +1,4 @@
-package com.pel2.dao;
+package com.aftt.dao;
 
 import java.io.File;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Component;
 
-import com.pel2.dto.Job;
+import com.aftt.dto.Job;
 
 @Component
 public class JobDao  {
