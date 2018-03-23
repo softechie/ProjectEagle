@@ -32,11 +32,6 @@ public class JobDao2  {
 		final long endTime = System.currentTimeMillis();
 		System.out.println("Total execution time: " + (endTime - startTime) );
 		
-		for (Job2 job : repository.findAll()) {
-			job.setState(0);
-			repository.save(job);
-		}
-		
 		return jobList;
 	}
 	
