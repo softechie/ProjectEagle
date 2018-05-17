@@ -1,0 +1,141 @@
+db.runCommand( { insert: "jobs", documents:
+  [
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 1",
+        "ref":"JOB1",
+        "status":"Completed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB2"
+           },
+           {
+              "ref":"JOB4"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 2",
+        "ref":"JOB2",
+        "status":"Completed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB3"
+           },
+           {
+              "ref":"JOB4"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 3",
+        "ref":"JOB3",
+        "status":"In-Progress",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB5"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 4",
+        "ref":"JOB4",
+        "status":"Completed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB5"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 5",
+        "ref":"JOB5",
+        "status":"Failed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 9",
+        "ref":"JOB9",
+        "status":"Completed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB10"
+           },
+           {
+              "ref":"JOB11"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 10",
+        "ref":"JOB10",
+        "status":"Completed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB5"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 11",
+        "ref":"JOB11",
+        "status":"In-Progress",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB8"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 6",
+        "ref":"JOB6",
+        "status":"Completed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB7"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 7",
+        "ref":"JOB7",
+        "status":"In-Progress",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+           {
+              "ref":"JOB8"
+           }
+        ]
+     },
+     {
+        "category":"JobsToRun",
+        "name":"Job Number 8",
+        "ref":"JOB8",
+        "status":"Failed",
+        "scheduled":"Scheduled to Run",
+        "dependencies":[
+
+        ]
+     }
+  ]
+})
