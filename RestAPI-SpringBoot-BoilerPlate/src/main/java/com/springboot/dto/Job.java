@@ -10,12 +10,12 @@ public class Job {
     @Id
     public String id;
 
-    public String category;
-    public String name;
-    public String ref;
-    public String status;
-    public String scheduled;
-    public JSONArray dependencies;
+    private String category;
+    private String name;
+    private String ref;
+    private String status;
+    private String scheduled;
+    private JSONArray dependencies;
 
 	public Job() {}
 	public Job(String id, String category, String name, String ref, String status, String scheduled, JSONArray dependencies) {
