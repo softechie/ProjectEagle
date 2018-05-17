@@ -11,5 +11,6 @@ import com.aftt.dto.Employee;
 public interface EmployeeRepository extends MongoRepository<Employee, String> {
 
 	public List<Employee> findAll();
-
+	public List<Employee> findAllByOrderByEmpIdAsc();
+	
 }

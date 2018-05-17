@@ -17,8 +17,6 @@ public class Job2 {
     public String ref;
     public int state;
     public int scheduled;
-    //public String[] dependencies;
-    //public ArrayList<String> dependencies;
     public JSONArray dependencies;
 
 	public Job2() {}
