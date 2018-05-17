@@ -1,32 +1,30 @@
-package com.aftt.dto;
-
-import java.util.ArrayList;
+package com.springboot.dto;
 
 import org.json.simple.JSONArray;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "jobs2")
-public class Job2 {
+@Document(collection = "jobs")
+public class Job {
 
     @Id
     public String id;
 
     public String category;
-    public String type;
+    public String name;
     public String ref;
-    public int state;
-    public int scheduled;
+    public String status;
+    public String scheduled;
     public JSONArray dependencies;
 
-	public Job2() {}
-	public Job2(String id, String category, String type, String ref, int state, int scheduled, JSONArray dependencies) {
+	public Job() {}
+	public Job(String id, String category, String name, String ref, String status, String scheduled, JSONArray dependencies) {
 		super();
 		this.id = id;
 		this.category = category;
-		this.type = type;
+		this.name = name;
 		this.ref = ref;
-		this.state = state;
+		this.status = status;
 		this.scheduled = scheduled;
 		this.dependencies = dependencies;
 	}
@@ -42,11 +40,11 @@ public class Job2 {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getType() {
-		return type;
+	public String getName() {
+		return name;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getRef() {
 		return ref;
@@ -54,16 +52,16 @@ public class Job2 {
 	public void setRef(String ref) {
 		this.ref = ref;
 	}
-	public int getState() {
-		return state;
+	public String getStatus() {
+		return status;
 	}
-	public void setState(int state) {
-		this.state = state;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	public int getScheduled() {
+	public String getScheduled() {
 		return scheduled;
 	}
-	public void setScheduled(int scheduled) {
+	public void setScheduled(String scheduled) {
 		this.scheduled = scheduled;
 	}
 	public JSONArray getDependencies() {
@@ -75,8 +73,8 @@ public class Job2 {
 	@Override
     public String toString() {
         return String.format(
-                "Job[id=%s, category='%s', type='%s', ref='%s', state='%d', scheduled='%d', dependencies='%s']",
-                id, category, type, ref, state, scheduled, dependencies);
+                "Job[id=%s, category='%s', name='%s', ref='%s', status='%s', scheduled='%s', dependencies='%s']",
+                id, category, name, ref, status, scheduled, dependencies);
     }
 	
 }

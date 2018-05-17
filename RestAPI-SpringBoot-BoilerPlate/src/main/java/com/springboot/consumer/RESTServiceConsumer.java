@@ -1,4 +1,4 @@
-package com.aftt.consumer;
+package com.springboot.consumer;
 
 //import java.util.HashMap;
 

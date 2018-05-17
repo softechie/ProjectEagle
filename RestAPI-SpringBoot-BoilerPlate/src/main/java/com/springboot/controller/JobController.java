@@ -1,4 +1,4 @@
-package com.aftt.controller;
+package com.springboot.controller;
 
 import java.net.URI;
 import java.sql.SQLException;
@@ -13,18 +13,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.aftt.dao.JobDao2;
-import com.aftt.dto.Job2;
+import com.springboot.dao.JobDao;
+import com.springboot.dto.Job;
 
 @RestController
-@RequestMapping( value = "/job2")
-public class JobController2 {	
+@RequestMapping( value = "/jobs")
+public class JobController {	
 	
 	@Autowired
-	private JobDao2 jobDao2;
+	private JobDao jobDao2;
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Job2> getJobs(){
+	public List<Job> getJobs(){
 		return jobDao2.getJobs();
 	}
 	
@@ -36,13 +36,13 @@ public class JobController2 {
 //	}
 	
 	@PostMapping(value = "/add")
-    public List<Job2> addJobs(@RequestBody List<Job2> jobList) throws SQLException {
+    public List<Job> addJobs(@RequestBody List<Job> jobList) throws SQLException {
 		jobDao2.addJobs(jobList);
 		return this.getJobs();
     }
 	
 	@PostMapping(value = "/delete/all")
-    public List<Job2> deleteAllJobs() throws SQLException {
+    public List<Job> deleteAllJobs() throws SQLException {
 		jobDao2.deleteAllJobs();
 		return this.getJobs();
     }

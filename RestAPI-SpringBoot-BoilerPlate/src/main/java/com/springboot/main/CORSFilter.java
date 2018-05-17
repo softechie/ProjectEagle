@@ -1,4 +1,4 @@
-package com.aftt.main;
+package com.springboot.main;
 
 import java.io.IOException;
 

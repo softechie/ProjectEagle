@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aftt.controller;
+package com.springboot.controller;
 
 import java.net.URI;
 import java.sql.SQLException;
@@ -16,24 +16,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.aftt.dao.EmployeeDao;
-import com.aftt.dto.Employee;
+import com.springboot.dao.EmployeeDao;
+import com.springboot.dto.Employee;
 
 @RestController
 @RequestMapping( value = "/employee")
 public class EmployeeController {	
 	
-	//Service class implements the Business logic and interact with other services/DAO based on the requirement.
+	/**EmployeeDao object created and mangaged as a bean by Spring Boot to query the Employee MongoDB Collection */
 	@Autowired
 	EmployeeDao empDao;	
 	
-//	@RequestMapping(value = "/all", method = RequestMethod.GET)
-//	public List<Employee> getEmployees(){
-//		return testService.getEmployees();
-//	}
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Employee> getEmployees(){
-		return empDao.getEmployees();
+	public List<Employee> getAllEmployees(){
+		return empDao.getAllEmployees();
 	}
 	
 //	@RequestMapping(value = "/details" , method = RequestMethod.POST)
