@@ -18,30 +18,22 @@ import com.springboot.dto.Job;
 public class JobController {	
 	
 	@Autowired
-	private JobDao jobDao2;
+	private JobDao jobDao;
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<Job> getJobs(){
-		return jobDao2.getJobs();
+		return jobDao.getJobs();
 	}
-	
-//	@RequestMapping(value = "/details" , method = RequestMethod.POST)
-//	public Employee getEmployee(@RequestBody String id){
-//		Employee responseObj = testService.getEmployee(id);
-//		System.out.println("TestController.getEmployee()"+responseObj.toString());
-//		return responseObj;
-//	}
 	
 	@PostMapping(value = "/add")
     public List<Job> addJobs(@RequestBody List<Job> jobList) throws SQLException {
-		jobDao2.addJobs(jobList);
+		jobDao.addJobs(jobList);
 		return this.getJobs();
     }
 	
 	@PostMapping(value = "/delete/all")
     public List<Job> deleteAllJobs() throws SQLException {
-		jobDao2.deleteAllJobs();
+		jobDao.deleteAllJobs();
 		return this.getJobs();
     }
-	
 }
