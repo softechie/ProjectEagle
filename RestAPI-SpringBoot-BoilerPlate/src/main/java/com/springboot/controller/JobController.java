@@ -53,4 +53,13 @@ public class JobController {
 		jobDao.deleteAllJobs();
 		return this.getJobs();
     }
+	
+	/** Maps the POST request to delete new Employees to the MongoDB Collection 
+	 * @return List of all Jobs*/
+	@PostMapping(value = "/delete/single")
+    public List<Job> deleteSingleJob(@RequestBody Job job){
+		log.info("POST Request: /jobs/delete/single...");
+		jobDao.deleteSingleJob(job);
+		return this.getJobs();
+    }
 }
