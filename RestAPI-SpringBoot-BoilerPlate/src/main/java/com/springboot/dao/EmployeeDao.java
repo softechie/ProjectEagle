@@ -20,11 +20,16 @@ import com.mongodb.ServerAddress;
 import com.springboot.dto.Employee;
 
 /** DAO class that connects to the MongoDB and makes queries to the Employee collection 
- * @author aprieger */
+ * @author aprieger 
+ * @Component -- indicates this class is a Spring component.
+ * */
 @Component
 public class EmployeeDao  {
 	
-	/** Environment object that is created and managed as a bean by spring that allows the usage of data from application.properties */
+	/** Environment object that is created and managed as a bean by spring that allows the usage of data from application.properties 
+	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
+	 *  dependency implicitly. 
+	 * */
 	@Autowired
 	private Environment env;
 	

@@ -15,7 +15,11 @@ import com.springboot.dao.JobDao;
 import com.springboot.dto.Job;
 
 /** Rest Controller to handle the requests for getting and posting of Job data in the MongoDB 
- * @author aprieger */
+ * @author aprieger 
+ * @RestController -- Marks the class as a RestController
+ * @RequestMapping -- When used at the class level, this annotation creates a base URI for the controller. RequestMapping
+ * used at method level to perform different operations like a Dao request or gather information.
+ * */
 @RestController
 @RequestMapping( value = "/jobs")
 public class JobController {	
@@ -23,7 +27,10 @@ public class JobController {
 	/** LOG object to log info and errors to from the system */
 	private static Logger log = LoggerFactory.getLogger(JobController.class);
 	
-	/** JobDao object created and managed as a bean by Spring Boot to query the Job MongoDB Collection */
+	/** JobDao object created and managed as a bean by Spring Boot to query the Job MongoDB Collection 
+	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
+	 *  dependency implicitly. 
+	 * */
 	@Autowired
 	private JobDao jobDao;
 

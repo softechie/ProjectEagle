@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Component;
-
+/**
+ * @Component -- indicates this class is a Spring component.
+ */
 @Component
 public class CORSFilter implements Filter {
 

@@ -14,7 +14,11 @@ import com.springboot.dao.EmployeeDao;
 import com.springboot.dto.Employee;
 
 /** Rest Controller to handle the requests for getting and posting of Employee data in the MongoDB 
- * @author aprieger */
+ * @author aprieger 
+ * @RestController -- Marks the class as a RestController
+ * @RequestMapping -- When used at the class level, this annotation creates a base URI for the controller. RequestMapping
+ * used at method level to perform different operations like a Dao request or gather information.
+ * */
 @RestController
 @RequestMapping( value = "/employee")
 public class EmployeeController {
@@ -22,7 +26,10 @@ public class EmployeeController {
 	/** LOG object to log info and errors to the system */
 	private static Logger log = LoggerFactory.getLogger(EmployeeController.class);
 	
-	/** EmployeeDao object created and managed as a bean by Spring Boot to query the Employee MongoDB Collection */
+	/** EmployeeDao object created and managed as a bean by Spring Boot to query the Employee MongoDB Collection 
+	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
+	 *  dependency implicitly. 
+	 * */
 	@Autowired
 	EmployeeDao empDao;	
 	

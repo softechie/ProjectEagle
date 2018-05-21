@@ -4,9 +4,11 @@ import org.json.simple.JSONArray;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+//@Document -- This annotation informs Spring this class is a Mongo collection
 @Document(collection = "jobs")
 public class Job {
 
+	// @ID -- Marks this field as the primary key
     @Id
     public String id;
 

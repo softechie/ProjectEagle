@@ -3,9 +3,11 @@ package com.springboot.dto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+// @Document -- This annotation informs Spring this class is a Mongo collection
 @Document(collection = "employees")
 public class Employee {
 	
+	// @ID -- Marks this field as the primary key
 	@Id
 	public String id;
 

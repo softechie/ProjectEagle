@@ -1,6 +1,5 @@
 package com.springboot.dao;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
@@ -19,16 +17,20 @@ import org.springframework.stereotype.Component;
 import com.mongodb.MongoClient;
 import com.mongodb.ServerAddress;
 import com.mongodb.WriteResult;
-import com.springboot.dto.Employee;
 import com.springboot.dto.Job;
 import com.springboot.main.JobRepository;
 
 /** DAO class that connects to the MongoDB and makes queries to the Job collection 
- * @author aprieger */
+ * @author aprieger 
+ * @Component -- indicates this class is a Spring component.
+ * */
 @Component
 public class JobDao  {
 
-	/** MongoRepository object that is created and managed as a bean by spring that connects and queries the MongoDB */
+	/** MongoRepository object that is created and managed as a bean by spring that connects and queries the MongoDB 
+	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
+	 *  dependency implicitly. 
+	 * */
 	@Autowired
 	private JobRepository repository;
 	/** LOG object to log info and errors to from the system */
