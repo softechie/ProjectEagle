@@ -69,4 +69,11 @@ public class JobController {
 		jobDao.deleteSingleJob(job);
 		return this.getJobs();
     }
+	
+	@PostMapping(value = "/edit")
+	public List<Job> editJob(@RequestBody Job job) {
+		log.info("POST Request: /jobs/edit..");
+		jobDao.editJob(job);
+		return this.getJobs();
+	}
 }
