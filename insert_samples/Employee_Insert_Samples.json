@@ -1,0 +1,404 @@
+db.runCommand( { insert: "employees", documents:
+  [
+     {
+        "empId":"4678",
+        "name":"Vincenz Ipgrave",
+        "status":"Onboarding Cancelled",
+        "tenure":"$28714.93",
+        "phone":"395-626-2652",
+        "email":"vipgrave0@360.cn"
+     },
+     {
+        "empId":"4046",
+        "name":"Ingrid Mora",
+        "status":"Onboarding Completed",
+        "tenure":"$64726.63",
+        "phone":"237-219-5694",
+        "email":"imora1@mit.edu"
+     },
+     {
+        "empId":"5441",
+        "name":"Eloisa Knights",
+        "status":"Onboarding In Progress",
+        "tenure":"$64302.09",
+        "phone":"604-256-7291",
+        "email":"eknights2@xing.com"
+     },
+     {
+        "empId":"5224",
+        "name":"Jacynth Nendick",
+        "status":"Onboarding Completed",
+        "tenure":"$97523.23",
+        "phone":"971-913-0081",
+        "email":"jnendick3@vkontakte.ru"
+     },
+     {
+        "empId":"8392",
+        "name":"Valma Sheldrick",
+        "status":"Onboarding Cancelled",
+        "tenure":"$23958.61",
+        "phone":"925-430-6684",
+        "email":"vsheldrick4@vk.com"
+     },
+     {
+        "empId":"2905",
+        "name":"Harriott Goodison",
+        "status":"Onboarding Completed",
+        "tenure":"$73239.41",
+        "phone":"115-831-2717",
+        "email":"hgoodison5@abc.net.au"
+     },
+     {
+        "empId":"1100",
+        "name":"Flora Gahagan",
+        "status":"Onboarding Cancelled",
+        "tenure":"$95515.33",
+        "phone":"589-373-6633",
+        "email":"fgahagan6@engadget.com"
+     },
+     {
+        "empId":"1293",
+        "name":"Nevin Battersby",
+        "status":"Onboarding In Progress",
+        "tenure":"$18584.86",
+        "phone":"462-631-7848",
+        "email":"nbattersby7@storify.com"
+     },
+     {
+        "empId":"5750",
+        "name":"Killian Jewes",
+        "status":"Onboarding In Progress",
+        "tenure":"$35477.11",
+        "phone":"295-923-8225",
+        "email":"kjewes8@instagram.com"
+     },
+     {
+        "empId":"4138",
+        "name":"Ethelred Newhouse",
+        "status":"Onboarding In Progress",
+        "tenure":"$55251.23",
+        "phone":"515-135-1495",
+        "email":"enewhouse9@bandcamp.com"
+     },
+     {
+        "empId":"3609",
+        "name":"Clary Oxx",
+        "status":"Onboarding Cancelled",
+        "tenure":"$64794.38",
+        "phone":"521-105-9658",
+        "email":"coxxa@answers.com"
+     },
+     {
+        "empId":"4443",
+        "name":"Alfi Leopard",
+        "status":"Onboarding In Progress",
+        "tenure":"$28820.52",
+        "phone":"725-221-9515",
+        "email":"aleopardb@hao123.com"
+     },
+     {
+        "empId":"4861",
+        "name":"Kathy Curtis",
+        "status":"Onboarding Completed",
+        "tenure":"$70800.99",
+        "phone":"532-744-1410",
+        "email":"kcurtisc@patch.com"
+     },
+     {
+        "empId":"1483",
+        "name":"Wylma Gateland",
+        "status":"Onboarding Cancelled",
+        "tenure":"$96170.37",
+        "phone":"941-767-9478",
+        "email":"wgatelandd@sohu.com"
+     },
+     {
+        "empId":"9147",
+        "name":"Corliss Timmens",
+        "status":"Onboarding In Progress",
+        "tenure":"$48839.92",
+        "phone":"740-288-0902",
+        "email":"ctimmense@smugmug.com"
+     },
+     {
+        "empId":"2319",
+        "name":"Wes Dunston",
+        "status":"Onboarding Cancelled",
+        "tenure":"$40142.18",
+        "phone":"334-175-7746",
+        "email":"wdunstonf@skype.com"
+     },
+     {
+        "empId":"7637",
+        "name":"Katalin Garling",
+        "status":"Onboarding Cancelled",
+        "tenure":"$15810.81",
+        "phone":"559-655-1525",
+        "email":"kgarlingg@oracle.com"
+     },
+     {
+        "empId":"9672",
+        "name":"Ardelia Giraudot",
+        "status":"Onboarding In Progress",
+        "tenure":"$97941.44",
+        "phone":"969-422-4730",
+        "email":"agiraudoth@zimbio.com"
+     },
+     {
+        "empId":"1751",
+        "name":"Jan Boreham",
+        "status":"Onboarding In Progress",
+        "tenure":"$81786.12",
+        "phone":"903-455-6263",
+        "email":"jborehami@prweb.com"
+     },
+     {
+        "empId":"9067",
+        "name":"Tiertza Handrik",
+        "status":"Onboarding Cancelled",
+        "tenure":"$15496.76",
+        "phone":"980-210-2001",
+        "email":"thandrikj@odnoklassniki.ru"
+     },
+     {
+        "empId":"3712",
+        "name":"Cammy Flatt",
+        "status":"Onboarding In Progress",
+        "tenure":"$96884.78",
+        "phone":"499-985-1043",
+        "email":"cflattk@mayoclinic.com"
+     },
+     {
+        "empId":"9535",
+        "name":"Rhodia Hedditch",
+        "status":"Onboarding Completed",
+        "tenure":"$72586.56",
+        "phone":"914-223-6961",
+        "email":"rhedditchl@pen.io"
+     },
+     {
+        "empId":"4717",
+        "name":"Efren Ewings",
+        "status":"Onboarding Completed",
+        "tenure":"$54535.56",
+        "phone":"221-936-1946",
+        "email":"eewingsm@mtv.com"
+     },
+     {
+        "empId":"9732",
+        "name":"Marline Matuska",
+        "status":"Onboarding Completed",
+        "tenure":"$54494.21",
+        "phone":"926-824-3691",
+        "email":"mmatuskan@msu.edu"
+     },
+     {
+        "empId":"9694",
+        "name":"Glyn Seccombe",
+        "status":"Onboarding In Progress",
+        "tenure":"$22506.70",
+        "phone":"601-439-8058",
+        "email":"gseccombeo@creativecommons.org"
+     },
+     {
+        "empId":"4971",
+        "name":"Izak Fricker",
+        "status":"Onboarding Completed",
+        "tenure":"$14454.26",
+        "phone":"899-919-0862",
+        "email":"ifrickerp@myspace.com"
+     },
+     {
+        "empId":"2167",
+        "name":"Lauryn Thewles",
+        "status":"Onboarding In Progress",
+        "tenure":"$74560.02",
+        "phone":"384-312-9027",
+        "email":"lthewlesq@google.com.au"
+     },
+     {
+        "empId":"6859",
+        "name":"Dorolisa Yendle",
+        "status":"Onboarding Completed",
+        "tenure":"$91131.77",
+        "phone":"858-529-8710",
+        "email":"dyendler@ftc.gov"
+     },
+     {
+        "empId":"3465",
+        "name":"Ernesta Cristofano",
+        "status":"Onboarding Completed",
+        "tenure":"$75374.82",
+        "phone":"217-809-3481",
+        "email":"ecristofanos@ucoz.ru"
+     },
+     {
+        "empId":"4543",
+        "name":"Kristopher Koopman",
+        "status":"Onboarding Completed",
+        "tenure":"$44102.41",
+        "phone":"288-214-0858",
+        "email":"kkoopmant@g.co"
+     },
+     {
+        "empId":"8904",
+        "name":"Mayer Whitten",
+        "status":"Onboarding Cancelled",
+        "tenure":"$94873.89",
+        "phone":"187-724-9636",
+        "email":"mwhittenu@desdev.cn"
+     },
+     {
+        "empId":"7288",
+        "name":"Bell Cocklie",
+        "status":"Onboarding In Progress",
+        "tenure":"$41386.42",
+        "phone":"196-993-1689",
+        "email":"bcockliev@si.edu"
+     },
+     {
+        "empId":"1223",
+        "name":"Lonni Beisley",
+        "status":"Onboarding Completed",
+        "tenure":"$34082.50",
+        "phone":"888-282-9808",
+        "email":"lbeisleyw@ifeng.com"
+     },
+     {
+        "empId":"7901",
+        "name":"Eileen Kinnar",
+        "status":"Onboarding In Progress",
+        "tenure":"$24268.93",
+        "phone":"695-407-3541",
+        "email":"ekinnarx@flickr.com"
+     },
+     {
+        "empId":"9414",
+        "name":"Veronique Zanitti",
+        "status":"Onboarding Cancelled",
+        "tenure":"$87637.71",
+        "phone":"452-580-6912",
+        "email":"vzanittiy@twitpic.com"
+     },
+     {
+        "empId":"3119",
+        "name":"Mahmud Purver",
+        "status":"Onboarding Completed",
+        "tenure":"$47047.66",
+        "phone":"951-235-6977",
+        "email":"mpurverz@shareasale.com"
+     },
+     {
+        "empId":"8093",
+        "name":"Marion Florence",
+        "status":"Onboarding Cancelled",
+        "tenure":"$37899.78",
+        "phone":"526-106-9870",
+        "email":"mflorence10@fda.gov"
+     },
+     {
+        "empId":"6498",
+        "name":"Florence Troth",
+        "status":"Onboarding Completed",
+        "tenure":"$18698.12",
+        "phone":"424-850-7706",
+        "email":"ftroth11@zimbio.com"
+     },
+     {
+        "empId":"3715",
+        "name":"Smitty Gabby",
+        "status":"Onboarding Completed",
+        "tenure":"$66639.87",
+        "phone":"262-864-4133",
+        "email":"sgabby12@cbsnews.com"
+     },
+     {
+        "empId":"2891",
+        "name":"Anabal Beasley",
+        "status":"Onboarding Completed",
+        "tenure":"$31804.15",
+        "phone":"276-571-8011",
+        "email":"abeasley13@smugmug.com"
+     },
+     {
+        "empId":"6175",
+        "name":"Manolo Hunnicot",
+        "status":"Onboarding In Progress",
+        "tenure":"$69958.33",
+        "phone":"357-707-1253",
+        "email":"mhunnicot14@gmpg.org"
+     },
+     {
+        "empId":"8941",
+        "name":"Kerr Mehaffey",
+        "status":"Onboarding In Progress",
+        "tenure":"$73019.48",
+        "phone":"240-512-6691",
+        "email":"kmehaffey15@mashable.com"
+     },
+     {
+        "empId":"2904",
+        "name":"Allyson Vedikhov",
+        "status":"Onboarding In Progress",
+        "tenure":"$81846.60",
+        "phone":"604-886-4485",
+        "email":"avedikhov16@tumblr.com"
+     },
+     {
+        "empId":"7192",
+        "name":"Donella Lightowlers",
+        "status":"Onboarding Cancelled",
+        "tenure":"$58424.45",
+        "phone":"717-394-3061",
+        "email":"dlightowlers17@linkedin.com"
+     },
+     {
+        "empId":"6697",
+        "name":"Elfie Born",
+        "status":"Onboarding Completed",
+        "tenure":"$59967.71",
+        "phone":"691-489-5258",
+        "email":"eborn18@ihg.com"
+     },
+     {
+        "empId":"7431",
+        "name":"Ludovika Ricardot",
+        "status":"Onboarding Completed",
+        "tenure":"$20836.07",
+        "phone":"465-811-3393",
+        "email":"lricardot19@businesswire.com"
+     },
+     {
+        "empId":"8270",
+        "name":"Billy Bacher",
+        "status":"Onboarding Completed",
+        "tenure":"$96507.55",
+        "phone":"787-556-9798",
+        "email":"bbacher1a@bravesites.com"
+     },
+     {
+        "empId":"2188",
+        "name":"Sada Roon",
+        "status":"Onboarding Completed",
+        "tenure":"$82683.01",
+        "phone":"463-950-4810",
+        "email":"sroon1b@businessinsider.com"
+     },
+     {
+        "empId":"6999",
+        "name":"Katey Dufore",
+        "status":"Onboarding Completed",
+        "tenure":"$71127.36",
+        "phone":"573-376-2541",
+        "email":"kdufore1c@bizjournals.com"
+     },
+     {
+        "empId":"7014",
+        "name":"Tiebout Dilloway",
+        "status":"Onboarding Completed",
+        "tenure":"$67179.59",
+        "phone":"497-577-3460",
+        "email":"tdilloway1d@mtv.com"
+     }
+  ]
+})
