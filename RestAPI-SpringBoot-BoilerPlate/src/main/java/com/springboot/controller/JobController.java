@@ -76,4 +76,9 @@ public class JobController {
 		jobDao.editJob(job);
 		return this.getJobs();
 	}
+	
+	@PostMapping(value = "/parse")
+	public List<Job> parseJobs(@RequestBody String input) {
+		return jobDao.parseJobs(input);
+	}
 }

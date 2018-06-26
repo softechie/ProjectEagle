@@ -1,5 +1,6 @@
 package com.springboot.dao;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -104,5 +105,10 @@ public class JobDao  {
 		catch (Exception e) {
 			log.error("Error: %s", Arrays.toString(e.getStackTrace()));
 		}
+	}
+	
+	public List<Job> parseJobs(String input) {
+		System.out.println(input);
+		return new ArrayList<>();
 	}
 }
