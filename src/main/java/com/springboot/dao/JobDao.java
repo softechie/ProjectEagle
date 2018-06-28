@@ -30,15 +30,14 @@ import com.springboot.main.JobRepository;
 @Component
 public class JobDao  {
 
-	/** MongoRepository object that is created and managed as a bean by spring that connects and queries the MongoDB 
+	/* MongoRepository object that is created and managed as a bean by spring that connects and queries the MongoDB 
 	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
-	 *  dependency implicitly. 
-	 * */
+	 *  dependency implicitly. */
 	@Autowired
 	private JobRepository repository;
-	/** LOG object to log info and errors to from the system */
+	/* LOG object to log info and errors to from the system */
 	private static Logger log = LoggerFactory.getLogger(JobDao.class);
-	/** Environment object that is created and managed as a bean by spring that allows the usage of data from application.properties */
+	/* Environment object that is created and managed as a bean by spring that allows the usage of data from application.properties */
 	@Autowired
 	private Environment env;
 	

@@ -26,14 +26,11 @@ import com.springboot.dto.Employee;
 @Component
 public class EmployeeDao  {
 	
-	/** Environment object that is created and managed as a bean by spring that allows the usage of data from application.properties 
-	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
-	 *  dependency implicitly. 
-	 * */
+	/* Environment object that is created and managed as a bean by spring that allows the usage of data from application.properties */
 	@Autowired
 	private Environment env;
 	
-	/** LOG object to log info and errors to from the system */
+	/* LOG object to log info and errors to from the system */
 	private static Logger log = LoggerFactory.getLogger(EmployeeDao.class);
 
 	/** Method to connect to the MongoDB manually, then get all the employees sorted by EmpId Ascending
@@ -46,11 +43,11 @@ public class EmployeeDao  {
 		String mongoDBName = env.getProperty("spring.data.mongodb.database");
 		Integer mongoPort = Integer.parseInt(env.getProperty("spring.data.mongodb.port"));
 		
-		/**	//If the MongoDB requires a username and password to login to access, use the MongoCredential object to feed into the MongoClient
-			String mongoUser = "testUsername";
-			char[] mongoPwd = "testPassword".toCharArray();
-			MongoCredential credential = MongoCredential.createCredential(mongoUser, mongoDBName, mongoPwd);
-			MongoClient client = new MongoClient(new ServerAddress(mongoHost, mongoPort), Arrays.asList(credential)); */
+//		//If the MongoDB requires a username and password to login to access, use the MongoCredential object to feed into the MongoClient
+//		String mongoUser = "testUsername";
+//		char[] mongoPwd = "testPassword".toCharArray();
+//		MongoCredential credential = MongoCredential.createCredential(mongoUser, mongoDBName, mongoPwd);
+//		MongoClient client = new MongoClient(new ServerAddress(mongoHost, mongoPort), Arrays.asList(credential));
 		
 		//If we do not need to login for access, we will just create a Client with the name of the Host an the Port number
 		try (MongoClient client = new MongoClient(new ServerAddress(mongoHost, mongoPort))) {

@@ -23,12 +23,12 @@ import com.springboot.dto.Employee;
 @RequestMapping( value = "/employee")
 public class EmployeeController {
 	
-	/** LOG object to log info and errors to the system */
+	/* LOG object to log info and errors to the system */
 	private static Logger log = LoggerFactory.getLogger(EmployeeController.class);
 	
-	/** EmployeeDao object created and managed as a bean by Spring Boot to query the Employee MongoDB Collection 
-	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
-	 *  dependency implicitly. 
+	/* EmployeeDao object created and managed as a bean by Spring Boot to query the Employee MongoDB Collection
+	 * @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
+	 * dependency implicitly. 
 	 * */
 	@Autowired
 	EmployeeDao empDao;	

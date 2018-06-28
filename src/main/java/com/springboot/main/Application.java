@@ -21,13 +21,12 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan({"com.springboot.*"})
 public class Application {
-	/**Logger object used to log messages and errors to the system */
+	/* Logger object used to log messages and errors to the system */
 	private static Logger log = LoggerFactory.getLogger(Application.class);
 
 	/** Creates filter settings to be used by the CORS filter to allow any URL patterns to access this API 
 	 *  @Bean -- When used at the method level and with the @Configuration annotation, creates a Spring Bean
-	 *  (@SpringBootApplication added the @Configuration annotation).
-	 * */
+	 *  (@SpringBootApplication added the @Configuration annotation). */
 	@Bean
 	public FilterRegistrationBean someFilterRegistration() {
 		log.info("Creating FilterRegistrationBean for the CORS Filter...");

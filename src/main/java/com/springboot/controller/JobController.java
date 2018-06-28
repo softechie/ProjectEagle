@@ -24,12 +24,12 @@ import com.springboot.dto.Job;
 @RequestMapping( value = "/jobs")
 public class JobController {	
 	
-	/** LOG object to log info and errors to from the system */
+	/* LOG object to log info and errors to from the system */
 	private static Logger log = LoggerFactory.getLogger(JobController.class);
 	
-	/** JobDao object created and managed as a bean by Spring Boot to query the Job MongoDB Collection 
-	 *  @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
-	 *  dependency implicitly. 
+	/* JobDao object created and managed as a bean by Spring Boot to query the Job MongoDB Collection 
+	 * @Autowired -- this annotation can be used on field, constructor, or setter method, and will inject object
+	 * dependency implicitly. 
 	 * */
 	@Autowired
 	private JobDao jobDao;
