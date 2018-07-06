@@ -1,8 +1,14 @@
 package com.springboot.dao;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 import org.json.simple.JSONArray;
 import org.slf4j.Logger;
@@ -107,7 +113,24 @@ public class JobDao  {
 	}
 	
 	public List<Job> parseJobs(String input) {
-		System.out.println(input);
-		return new ArrayList<>();
+		ArrayList<Job> newJobList = new ArrayList<>();
+
+        String line = "";
+        String delimiter = ",";
+        Reader inputReader = new StringReader(input);
+        
+        try (BufferedReader br = new BufferedReader(inputReader)) {
+            while ((line = br.readLine()) != null) {
+                String[] job = line.split(delimiter);
+                newJobList.add(new Job("", job[0], job[1], job[2], job[3], job[4], null));
+                if (job[0].isEmpty()) {
+                	System.out.println(job[1]);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+		return newJobList;
 	}
 }
