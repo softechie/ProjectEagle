@@ -1,4 +1,4 @@
-##Rest Client JSON Post Request
+##Rest Client JSON Post Request Samle
 
 ###header>custom header -->  content_type:application/json
 ###METHOD:POST
