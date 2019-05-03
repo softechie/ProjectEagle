@@ -6,7 +6,7 @@
 package com.pel2.dao.impl;
 
 import com.pel2.dao.SkillDAO;
-import com.pel2.dto.Skill;
+import com.pel2.dto.SkillOBJ.Skill;
 import java.util.ArrayList;
 
 /**
