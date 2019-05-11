@@ -29,7 +29,8 @@ public class MainMenu {
                             "  4) Java 8 \n" +
                             "  5) Design Pattern Examples \n" +
                             "  6) Misc \n" +
-                            "  7) Exit"
+                            "  7) Exit"  
+                              
             );
 
             try {

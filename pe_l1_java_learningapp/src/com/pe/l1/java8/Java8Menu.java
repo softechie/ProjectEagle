@@ -1,6 +1,7 @@
 package com.pe.l1.java8;
 
 import com.pe.l1.java8.interfaceChanges.InterfaceChanges;
+import com.pe.l1.java8.ioBasicOpern.ioBasicOpern;
 import com.pe.l1.java8.lambda.Lambda;
 import com.pe.l1.java8.methodReference.MethodReference;
 
@@ -23,7 +24,8 @@ public class Java8Menu {
                             "  1) Lambda Expressions\n" +
                             "  2) Method References\n" +
                             "  3) Interface Changes\n" +
-                            "  4) Back to Main Menu"
+                            "  4) Java IO Basic \n" +
+                            "  5) Back to Main Menu"
             );
 
             try {
@@ -45,6 +47,9 @@ public class Java8Menu {
                     InterfaceChanges.intro();
                     break;
                 case 4:
+                    ioBasicOpern.subMenu();
+                    break;
+                case 5:
                     System.out.println("Going back to main menu.\n");
                     break display;
                 default:
