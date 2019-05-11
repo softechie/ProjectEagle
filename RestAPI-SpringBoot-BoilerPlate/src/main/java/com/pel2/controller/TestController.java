@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.pel2.dto.Employee;
+import com.pel2.dto.Skill;
 import com.pel2.service.TestService;
 
 /**
@@ -58,6 +59,11 @@ public class TestController {
 		return ResponseEntity.created(location).build();
 		
    }
+    
+    @RequestMapping(value = "/skills", method = RequestMethod.GET)
+	public List<Skill> getSkills(){
+		return (List<Skill>) testService.getSkills();
+	}
 
 
 }

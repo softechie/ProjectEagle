@@ -3,14 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.pel2.dto.SkillOBJ;
+package com.pel2.dto;
+
+import com.couchbase.client.java.repository.annotation.Id;
 
 /**
  *
  * @author JOSEPH
  */
+
 public class Skill {
     private String name;
+    
+    @Id
     private int id;
 
     public Skill() {
