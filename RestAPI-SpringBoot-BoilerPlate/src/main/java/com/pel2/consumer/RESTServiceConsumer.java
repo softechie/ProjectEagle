@@ -15,7 +15,7 @@ public class RESTServiceConsumer {
     public static void consumer() {
         RestTemplate restTemplate = new RestTemplate();
         
-        String consumeJSONString = restTemplate.getForObject("http://localhost:8080/employee/all", String.class);
+        String consumeJSONString = restTemplate.getForObject("http://localhost:8098/employee/all", String.class);
         System.out.println("JSON String: "+consumeJSONString);      
     }
 
