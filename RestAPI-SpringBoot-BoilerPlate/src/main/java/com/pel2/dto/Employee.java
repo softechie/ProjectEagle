@@ -183,5 +183,11 @@ public class Employee {
 	public void setAcctid(String acctid) {
 		this.acctid = acctid;
 	}
+
+        @Override
+        public String toString() {
+            return "Employee{" + "empId=" + empId + ", name=" + name + ", status=" + status + ", tenure=" + tenure + ", phone=" + phone + ", email=" + email + ", doj=" + doj + ", wl=" + wl + ", hl=" + hl + ", cl=" + cl + ", rmid=" + rmid + ", roleid=" + roleid + ", vertid=" + vertid + ", acctid=" + acctid + '}';
+        }
+        
 }
 

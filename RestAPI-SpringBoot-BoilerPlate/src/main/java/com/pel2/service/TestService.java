@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.pel2.dao.TestDataSimulator;
 import com.pel2.dao.EmployeeDao;
 import com.pel2.dto.Employee;
+import java.text.ParseException;
 
 /**
  * @author mbaransln
@@ -23,23 +24,31 @@ public class TestService {
 	 * the data from the simulator class "TestDataSimulator"
 	 */
 	@Autowired
-	TestDataSimulator employeeDao;
-	//EmployeeDao employeeDao;
-
+	//TestDataSimulator employeeDao;
+	EmployeeDao employeeDao;
+        
 	/**
 	 * Add the business logic if any for get Employees.
 	 * @return
 	 */
 	public List<Employee> getEmployees() {
-		return employeeDao.getEmployees();
+            return employeeDao.getEmployees();
 	}
 
 	public Employee getEmployee(String id) {
-		return employeeDao.getEmployee(id);
+            return employeeDao.getEmployee(id);
 	}	
 	 
-	public void saveEmployee(Employee emp) throws SQLException {
+	public int saveEmployee(Employee emp) throws SQLException, ParseException {
 	    /* Need to implement this in simulator */  
-		//employeeDao.saveEmployee(emp);
+            return employeeDao.saveEmployee(emp);
 	}
+        
+        public boolean deleteEmployee(String id) throws SQLException {
+            return employeeDao.deleteEmployee(id);
+        }
+        
+        public boolean updateEmployee(Employee emp) throws SQLException, ParseException {
+            return employeeDao.updateEmployee(emp);
+        }
 }

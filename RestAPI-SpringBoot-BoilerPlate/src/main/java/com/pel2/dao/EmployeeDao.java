@@ -11,6 +11,13 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
 import com.pel2.dto.Employee;
+import enums.EnumIsRelocate;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  * @author mbaransln
@@ -21,49 +28,123 @@ import com.pel2.dto.Employee;
 @Component
 public class EmployeeDao  {
 
-	@Autowired
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
-	@Value("${spring.datasource.platform}")
+    @Value("${spring.datasource.platform}")
     private String platform;
 	
 		
 	
-	public Employee getEmployee(String id){
-		String sql = "Select EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,WORKLOC,CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID from employee where EMPID = ?";
-		return jdbcTemplate.queryForObject(sql, employeeMapper, new Integer(id));
-	}
-	
-	public List<Employee> getEmployees(){
-		String sql = "Select EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,WORKLOC,CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID from employee";
-		return jdbcTemplate.query(sql, employeeMapper);
-	}
+    public Employee getEmployee(String id){
+        String sql = "Select EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,"
+                + "WORKLOC,CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID"
+                + " from database.employee where EMPID = ?";
+        
+        return jdbcTemplate.queryForObject(sql, employeeMapper, new Integer(id));
+    }
+
+    public List<Employee> getEmployees(){
+        String sql = "Select EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,WORKLOC,"
+                + "CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID from database.employee";
+        
+        return jdbcTemplate.query(sql, employeeMapper);
+    }
 
     private static final RowMapper<Employee> employeeMapper = new RowMapper<Employee>() {
         public Employee mapRow(ResultSet rs, int rowNum) throws SQLException {
-        	Employee employee = new Employee();
-        	employee.setEmpId(rs.getString("EMPID"));
-        	employee.setName(rs.getString("NAME"));
-        	employee.setStatus(rs.getString("STATUS"));
-        	employee.setTenure(rs.getString("TENURE"));
-        	employee.setPhone(rs.getString("PHONE"));
-        	employee.setEmail(rs.getString("EMAIL"));
-        	employee.setDoj(rs.getString("JOINING_DATE"));
-        	employee.setWl(rs.getString("WORKLOC"));
-        	employee.setCl(rs.getString("CURRENTLOC"));
-        	employee.setHl(rs.getString("HOMELOC"));
-        	employee.setRmid(rs.getString("ISRELOCATE"));
-        	employee.setRoleid(rs.getString("ROLEID"));
-        	employee.setVertid(rs.getString("VERTICALID"));
-        	employee.setAcctid(rs.getString("ACCOUNTID"));
+            Employee employee = new Employee();
+            employee.setEmpId(rs.getString("EMPID"));
+            employee.setName(rs.getString("NAME"));
+            employee.setStatus(rs.getString("STATUS"));
+            employee.setTenure(rs.getString("TENURE"));
+            employee.setPhone(rs.getString("PHONE"));
+            employee.setEmail(rs.getString("EMAIL"));
+            employee.setDoj(rs.getString("JOINING_DATE"));
+            employee.setWl(rs.getString("WORKLOC"));
+            employee.setCl(rs.getString("CURRENTLOC"));
+            employee.setHl(rs.getString("HOMELOC"));
+            employee.setRmid(rs.getString("ISRELOCATE"));
+            employee.setRoleid(rs.getString("ROLEID"));
+            employee.setVertid(rs.getString("VERTICALID"));
+            employee.setAcctid(rs.getString("ACCOUNTID"));
             return employee;
         }
     };
 	
 	
-	public void saveEmployee(final Employee employee) throws SQLException {
-		System.out.println("Query employees: platform->" + platform);
-		String sql = "INSERT into employee(EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,WORKLOC,CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID) VALUES (? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql,new Object[] { employee.getEmpId(), employee.getName() , employee.getStatus(),employee.getTenure(),employee.getPhone(),employee.getEmail(),employee.getDoj(),employee.getWl(),employee.getCl(),employee.getHl(),employee.getRmid(),employee.getRoleid(),employee.getVertid(),employee.getAcctid() });
+    public int saveEmployee(final Employee employee) throws SQLException, ParseException {
+        System.out.println("Query employees: platform->" + platform);
+        Integer generatedId = null;
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String sql = "INSERT into database.employee(NAME,STATUS,TENURE,PHONE,"
+                + "EMAIL,JOINING_DATE,WORKLOC,CURRENTLOC,HOMELOC,ISRELOCATE,"
+                + "ROLEID,VERTICALID,ACCOUNTID) VALUES (?, CAST(? as STATUS),"
+                + " ?, ?, ?, ?, ?, ?, ?, CAST(? as ISRELOCATE), ?, ?, ?)";
+
+        Connection connection = jdbcTemplate.getDataSource().getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        preparedStatement.setString(1, employee.getName());
+        preparedStatement.setString(2, Enum.valueOf(EnumIsRelocate.class, employee.getStatus()).toString());
+        preparedStatement.setInt(3, new Integer(employee.getTenure()));
+        preparedStatement.setString(4, employee.getPhone());
+        preparedStatement.setString(5, employee.getEmail());
+        if(employee.getDoj() != null)
+            preparedStatement.setDate(6, new java.sql.Date(formatter.parse(employee.getDoj()).getTime()));
+        else 
+            preparedStatement.setNull(6, java.sql.Types.DATE);
+        preparedStatement.setString(7, employee.getWl());
+        preparedStatement.setString(8, employee.getCl());
+        preparedStatement.setString(9, employee.getHl());
+        preparedStatement.setString(10,  Enum.valueOf(EnumIsRelocate.class, employee.getRmid()).toString());
+        if(employee.getRoleid() != null) 
+            preparedStatement.setInt(11, new Integer(employee.getRoleid())); 
+        else 
+            preparedStatement.setNull(11, java.sql.Types.INTEGER);    
+        if(employee.getVertid() != null)
+            preparedStatement.setInt(12, new Integer(employee.getVertid())); 
+        else 
+            preparedStatement.setNull(12, java.sql.Types.INTEGER);    
+        
+        if(employee.getAcctid() != null) 
+            preparedStatement.setInt(13, new Integer(employee.getAcctid())); 
+        else 
+            preparedStatement.setNull(13, java.sql.Types.INTEGER);                   
+
+        preparedStatement.executeUpdate();
+        ResultSet keys = preparedStatement.getGeneratedKeys();
+
+        if(keys.next())
+            generatedId = keys.getInt(1); //id returned after insert execution
+
+        return generatedId;         
+    }
+    
+    public boolean updateEmployee(final Employee employee) throws SQLException, ParseException {
+        String sql = "UPDATE database.employee SET NAME = ?, STATUS = CAST(? as STATUS), "
+                + " TENURE = ?, PHONE = ?, EMAIL = ?, JOINING_DATE = ?, WORKLOC = ?, "
+                + " CURRENTLOC = ?, HOMELOC = ?, ISRELOCATE = CAST(? AS ISRELOCATE),"
+                + " ROLEID = ?, VERTICALID = ?, ACCOUNTID = ? WHERE EMPID = ?";
+        
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        
+        int rows = jdbcTemplate.update(sql, new Object[] {employee.getName(),
+            Enum.valueOf(EnumIsRelocate.class, employee.getStatus()).toString(),
+            new Integer(employee.getTenure()),employee.getPhone(),employee.getEmail(),
+            employee.getDoj() != null ? new java.sql.Date(formatter.parse(employee.getDoj()).getTime()) : null, 
+            employee.getWl(),employee.getCl(),employee.getHl(),
+            Enum.valueOf(EnumIsRelocate.class, employee.getRmid()).toString(),
+            employee.getRoleid() != null ? new Integer(employee.getRoleid()) : null, 
+            employee.getVertid() != null ? new Integer(employee.getVertid()) : null,
+            employee.getAcctid() != null ? new Integer(employee.getAcctid()) : null, 
+            new Integer(employee.getEmpId())});
+        
+        return rows == 1;
+    }
+    
+    public boolean deleteEmployee(String empid) throws SQLException {
+        String query = "DELETE from database.employee where EMPID = ?";
+        int rows = jdbcTemplate.update(query, new Object[] { new Integer(empid) });
+        return rows == 1;
     }
 }
