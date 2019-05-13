@@ -9,8 +9,12 @@ import org.springframework.stereotype.Service;
 
 import com.pel2.dao.TestDataSimulator;
 import com.pel2.dao.EmployeeDao;
+import com.pel2.dao.impl.couchbase.SkillRepo;
+import com.pel2.dao.impl.SkillDAOImpl;
 import com.pel2.dto.Employee;
 import java.text.ParseException;
+import com.pel2.dto.Skill;
+import org.springframework.stereotype.Component;
 
 /**
  * @author mbaransln
@@ -27,6 +31,8 @@ public class TestService {
 	//TestDataSimulator employeeDao;
 	EmployeeDao employeeDao;
         
+//        @Autowired
+//        SkillDAOImpl skillDAO;
 	/**
 	 * Add the business logic if any for get Employees.
 	 * @return
@@ -51,4 +57,9 @@ public class TestService {
         public boolean updateEmployee(Employee emp) throws SQLException, ParseException {
             return employeeDao.updateEmployee(emp);
         }
+        
+//        public List<Skill> getSkills() {
+//            //return (List<Skill>) skillRepo.findAll();
+//		return skillDAO.getAllSkills();
+//	}
 }

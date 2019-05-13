@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.pel2.dto.Employee;
+import com.pel2.dto.Skill;
 import com.pel2.service.TestService;
 import java.text.ParseException;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,6 +47,29 @@ public class TestController {
         System.out.println("TestController.getEmployee()"+responseObj.toString());
         return responseObj;
     }
+
+/*
+	@PostMapping(value = "/emp")
+    public ResponseEntity<Void> addEmployee(@RequestBody Employee emp) throws SQLException {
+				 
+		if (emp == null)
+			return ResponseEntity.noContent().build();
+		
+		testService.saveEmployee(emp);
+		
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path(
+				"/{empId}").buildAndExpand(emp.getEmpId()).toUri();
+
+		return ResponseEntity.created(location).build();
+		
+   }
+*/
+    
+//    @RequestMapping(value = "/skills", method = RequestMethod.GET)
+//    public List<Skill> getSkills(){
+//            return (List<Skill>) testService.getSkills();
+//    }
+
 
     @PostMapping(value = "/emp")
     public int addEmployee(@RequestBody Employee emp) throws SQLException, ParseException {
