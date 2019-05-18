@@ -18,7 +18,7 @@ public class MainMenu {
     public static void mainMenu(){
         int selection;
         Scanner input = new Scanner(System.in);
-
+    //    System.out.println(input);
         while(true) {
             System.out.println("-- Java Tutorial --");
             System.out.println(
@@ -39,7 +39,8 @@ public class MainMenu {
                 System.out.println("Please enter a numerical value.");
                 selection = 9999;
             }
-            input.nextLine();
+              input.nextLine();
+        //    System.out.println(input.nextLine());
 
             switch (selection) {
                 case 1:
