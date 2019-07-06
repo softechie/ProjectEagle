@@ -1,0 +1,21 @@
+##Rest Client JSON Post Request Samle
+
+###header>custom header -->  content_type:application/json
+###METHOD:POST
+
+{
+"empId":"1003",
+"name": "Tom",
+"status": "T",
+"tenure": "1",
+"phone": "",
+"email":"",
+"doj":"2015-02-14",
+"wl":"",
+"hl":"",
+"cl":"",
+"rmid":"NA",
+"roleid":"1",
+"vertid":"2",
+"acctid":"4"
+}
