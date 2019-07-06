@@ -49,6 +49,8 @@ public class AES {
 		} catch (Exception e) {
 			System.out.println("Error while decrypting: " + e.toString());
 		}
-		return null;
+//		return null;
+//		Decyption is failing, so it's returning the original string
+		return strToDecrypt;
 	}
 }

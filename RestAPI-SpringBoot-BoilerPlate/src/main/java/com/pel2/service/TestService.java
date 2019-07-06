@@ -27,9 +27,10 @@ public class TestService {
 	 * Once Database is available, uncomment EmployeeDao class reference to get the data from DB. Currently it is retrieving 
 	 * the data from the simulator class "TestDataSimulator"
 	 */
-	@Autowired
+//	@Autowired
 	//TestDataSimulator employeeDao;
-	EmployeeDao employeeDao;
+	@Autowired
+	EmployeeDao employeeDao ;
         
 //        @Autowired
 //        SkillDAOImpl skillDAO;
@@ -37,7 +38,7 @@ public class TestService {
 	 * Add the business logic if any for get Employees.
 	 * @return
 	 */
-	public List<Employee> getEmployees() {
+	public Iterable<Employee> getEmployees() {
             return employeeDao.getEmployees();
 	}
 
@@ -46,14 +47,14 @@ public class TestService {
 	}	
 	 
 	public int saveEmployee(Employee emp) throws SQLException, ParseException {
-	    /* Need to implement this in simulator */  
+	    /* Need to implement this in simulator */
             return employeeDao.saveEmployee(emp);
 	}
-        
+
         public boolean deleteEmployee(String id) throws SQLException {
             return employeeDao.deleteEmployee(id);
         }
-        
+
         public boolean updateEmployee(Employee emp) throws SQLException, ParseException {
             return employeeDao.updateEmployee(emp);
         }

@@ -22,11 +22,11 @@ public class Employee {
 	private String roleid;
 	private String vertid;
 	private String acctid;
-	
+
 	public Employee(){}
 
 	public Employee(String empId, String name, String status, String tenure, String phone, String email, String doj,
-			String wl, String hl, String cl, String rmid, String roleid, String vertid, String acctid) {
+					String wl, String hl, String cl, String rmid, String roleid, String vertid, String acctid) {
 		super();
 		this.empId = empId;
 		this.name = name;
@@ -184,10 +184,10 @@ public class Employee {
 		this.acctid = acctid;
 	}
 
-        @Override
-        public String toString() {
-            return "Employee{" + "empId=" + empId + ", name=" + name + ", status=" + status + ", tenure=" + tenure + ", phone=" + phone + ", email=" + email + ", doj=" + doj + ", wl=" + wl + ", hl=" + hl + ", cl=" + cl + ", rmid=" + rmid + ", roleid=" + roleid + ", vertid=" + vertid + ", acctid=" + acctid + '}';
-        }
+	@Override
+	public String toString() {
+		return "Employee{" + "empId=" + empId + ", name=" + name + ", status=" + status + ", tenure=" + tenure + ", phone=" + phone + ", email=" + email + ", doj=" + doj + ", wl=" + wl + ", hl=" + hl + ", cl=" + cl + ", rmid=" + rmid + ", roleid=" + roleid + ", vertid=" + vertid + ", acctid=" + acctid + '}';
+	}
         
 }
 
