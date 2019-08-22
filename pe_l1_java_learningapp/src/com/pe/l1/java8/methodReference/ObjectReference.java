@@ -1,4 +1,4 @@
-package com.pe.l1.java8.methodReference;
+/*package com.pe.l1.java8.methodReference;
 
 public class ObjectReference {
 
@@ -7,3 +7,4 @@ public class ObjectReference {
 	}
 
 }
+*/

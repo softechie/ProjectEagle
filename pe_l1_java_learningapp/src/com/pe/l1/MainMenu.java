@@ -1,9 +1,10 @@
 package com.pe.l1;
 
 import com.pe.l1.designPatterns.DesignPattMenu;
-import com.pe.l1.exceptionHandling.ExceptionMenu;
+import com.pe.l1.exception_Handling.ExceptionMenu;
 import com.pe.l1.java8.Java8Menu;
 import com.pe.l1.memoryManagment.MemoryMenu;
+import com.pe.l1.misc.MiscSubMenu;
 import com.pe.l1.oop.OopMenu;
 
 import java.util.InputMismatchException;
@@ -13,10 +14,11 @@ import java.util.Scanner;
 /**
  * Created by rlawtonj on 5/9/2018.
  */
+//IDIOM:Item-0000: Always optimize for the reader, not the writer
 public class MainMenu {
-
+	//IDIOM:Item-0003: Correctness, then Clarity, then Conciseness
     public static void mainMenu(){
-        int selection;
+        
         Scanner input = new Scanner(System.in);
     //    System.out.println(input);
         while(true) {
@@ -32,7 +34,8 @@ public class MainMenu {
                             "  7) Exit"  
                               
             );
-
+           //IDIOM: Item-0450: Move local variable declarations to where they are used
+            int selection;
             try {
                 selection = input.nextInt();
             }catch(InputMismatchException ime){
@@ -59,7 +62,7 @@ public class MainMenu {
                     DesignPattMenu.subMenu();
                     break;
                 case 6:
-                    DesignPattMenu.subMenu();
+                    MiscSubMenu.subMenu();
                     break;
                 case 7:
                     System.out.println("Exiting system.");

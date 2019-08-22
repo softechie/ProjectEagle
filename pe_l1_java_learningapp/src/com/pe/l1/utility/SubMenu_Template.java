@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class SubMenu_Template {
 
     public static void subMenu(){
-        int selection;
+       
         Scanner input = new Scanner(System.in);
 
         display: while(true) {
@@ -22,7 +22,7 @@ public class SubMenu_Template {
                             "  4) Java 8 \n" +
                             "  5) Back to Main Menu"
             );
-
+            int selection;
             try {
                 selection = input.nextInt();
             }catch(InputMismatchException ime){

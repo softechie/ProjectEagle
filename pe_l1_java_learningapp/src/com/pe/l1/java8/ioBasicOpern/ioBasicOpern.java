@@ -26,8 +26,10 @@ public class ioBasicOpern {
             }catch(InputMismatchException ime){
                 System.out.println("Please enter a numerical value.");
                 selection = 9999;
+            }finally {
+            	 input.nextLine();
             }
-            input.nextLine();
+           
 
             switch (selection) {
                 case 1:

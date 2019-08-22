@@ -9,8 +9,8 @@ public class Explaination implements MyInterface{
 		
 	public static void main(String[] args){
 		// Java 7
-		Explaination e = new Explaination();
-		e.salutation("Bob");
+		Explaination explaination= new Explaination();
+		explaination.salutation("Bob");
 	
 		// Java 8
 		// no need to implement MyInterface or create an object of this class

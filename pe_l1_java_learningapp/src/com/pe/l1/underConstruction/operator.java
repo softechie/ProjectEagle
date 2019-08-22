@@ -1,15 +1,16 @@
 package com.pe.l1.underConstruction;
-
 /**
  *
  */
 public class operator {
     public static void main(String[] args) {
-
-        int result = 1 + 2;
+    	//IDIOM:Item-0362: Remove redundant number literal indicators
+    	
+       //for eg: float result = 1f + 2f;--> BAD
+        float result = 1f + 2f;
         System.out.println("print result = " + result);
 
-        int prevresult = result;
+        float prevresult = result;
         result = result - 1;
         System.out.println( "prevresult is " + result);
 

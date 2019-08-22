@@ -22,6 +22,7 @@ public class ExistingInterface {
 }
 
 class Person {
+	//IDIOM:Item-0007: Sort things logically
 	private String fName;
 	private String lName;
 	private int age;
