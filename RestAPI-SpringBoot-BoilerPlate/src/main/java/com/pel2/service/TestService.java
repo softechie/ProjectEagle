@@ -30,6 +30,7 @@ public class TestService {
 //	@Autowired
 	//TestDataSimulator employeeDao;
 	@Autowired
+	
 	EmployeeDao employeeDao ;
         
 //        @Autowired
@@ -46,9 +47,9 @@ public class TestService {
             return employeeDao.getEmployee(id);
 	}	
 	 
-	public int saveEmployee(Employee emp) throws SQLException, ParseException {
+	public  int saveEmployee(Employee emp) throws SQLException, ParseException {
 	    /* Need to implement this in simulator */
-            return employeeDao.saveEmployee(emp);
+             return employeeDao.saveEmployee(emp);
 	}
 
         public boolean deleteEmployee(String id) throws SQLException {
@@ -59,8 +60,19 @@ public class TestService {
             return employeeDao.updateEmployee(emp);
         }
         
+        public boolean delAllEmployees() {
+            return employeeDao.delAllEmployees();
+        }
+            
+            
+         /*  public int addAllEmployee(Employee emp) throws SQLException, ParseException{
+            	return employeeDao.addAllEmployee(emp);
+            }  */
+            
+	}
+        
 //        public List<Skill> getSkills() {
 //            //return (List<Skill>) skillRepo.findAll();
 //		return skillDAO.getAllSkills();
 //	}
-}
+

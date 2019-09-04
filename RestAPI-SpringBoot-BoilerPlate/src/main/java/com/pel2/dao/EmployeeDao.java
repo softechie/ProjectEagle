@@ -38,4 +38,9 @@ public interface EmployeeDao  {
     public boolean updateEmployee(final Employee employee) throws SQLException, ParseException;
 
     public boolean deleteEmployee(String empid) throws SQLException;
+
+	public boolean delAllEmployees();
+	
+	//public int  addAllEmployee(final Employee employee) throws SQLException, ParseException;
+	//   public Iterable<Employee> addAllEmployee();
 }
