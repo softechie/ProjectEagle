@@ -30,6 +30,8 @@ public class Immutable {
 	
 
 		public Immutable build() {
+			//IDIOM:Item-0373: Immutable use builder pattern
+
 			System.out.println("----OUTPUT----");
 			System.out.println("--In Immuatble Builder pattern method--\n");
 			return new Immutable(this);

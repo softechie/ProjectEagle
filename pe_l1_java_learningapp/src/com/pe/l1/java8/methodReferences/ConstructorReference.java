@@ -1,4 +1,4 @@
-package com.pe.l1.java8.methodReference;
+package com.pe.l1.java8.methodReferences;
 
 public class ConstructorReference {
 

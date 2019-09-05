@@ -1,4 +1,4 @@
-package com.pe.l1.java8.methodReference;
+package com.pe.l1.java8.methodReferences;
 
 import java.util.ArrayList;
 import java.util.Arrays;

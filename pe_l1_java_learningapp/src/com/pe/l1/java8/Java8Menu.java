@@ -2,10 +2,11 @@ package com.pe.l1.java8;
 
 import com.pe.l1.java8.Comparator.MainClass;
 import com.pe.l1.java8.DateTime.DateTimeExample;
+import com.pe.l1.java8.Optional.OptionalExample;
 import com.pe.l1.java8.interfaceChanges.InterfaceChanges;
 import com.pe.l1.java8.ioBasicOpern.ioBasicOpern;
 import com.pe.l1.java8.lambda.Lambda;
-import com.pe.l1.java8.methodReference.MethodReference;
+import com.pe.l1.java8.methodReferences.MethodReference;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class Java8Menu {
 					+ "  3) Interface Changes\n" + "  4) Java IO Basic \n" + " "
 							+ " 5) Comparators\n"
 							+ "  6) Date and Time\n"
-							+ "  7) Date and Time\n"
+							+ "  7) Optional \n"
 							+ "  8) Back to Main Menu");
 
 			try {
@@ -58,7 +59,7 @@ public class Java8Menu {
 				DateTimeExample.main(null);
 				break;
 			case 7:
-				DateTimeExample.main(null);
+				OptionalExample.main(null);
 				break;
 			case 8:
 				System.out.println("Going back to main menu.\n");
