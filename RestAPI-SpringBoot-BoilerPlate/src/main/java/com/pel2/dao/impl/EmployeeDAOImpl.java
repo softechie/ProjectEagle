@@ -1,13 +1,10 @@
 package com.pel2.dao.impl;
 
-//import com.pel2.MysqlDbConfig;
-
 import com.pel2.dao.EmployeeDao;
 import com.pel2.dto.Employee;
 import com.pel2.encryption.AES;
 import enums.EnumIsRelocate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -20,64 +17,29 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-import javax.sql.DataSource;
 
 //Made service to make sure that EmployeeDao uses this implementation in @Autowires
 @Component
 @Service
 public class EmployeeDAOImpl implements EmployeeDao {
-	
-	@Autowired
-	@Qualifier("mysqldataSource") 
-	public DataSource mysqldataSource;
-	
-	@Autowired
-	@Qualifier("postgredataSource")
-	public DataSource postgredataSource;
-	
-	public JdbcTemplate jdbcTemplate;
-	
-	public void selectDatabase() {
-		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter Database \n 1 MySQL  \n 2 Postgre  ");
-		int i = scanner.nextInt();
-		
-		switch(i) {
-		case 1:
-			
-			jdbcTemplate = new JdbcTemplate(mysqldataSource);
-			System.out.print("connected mysql \n");
-			break;
-		case 2:
-			jdbcTemplate = new JdbcTemplate(postgredataSource);
-			System.out.print("connected postgre \n");
-			break;
-		default:
-			System.out.print("No Db Connected");
-		
-		}
-	}
-	
 
-	//@Value("${mysql.datasource.platform}")
-	//private String platform;
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	@Value("${spring.datasource.platform}")
+	private String platform;
+
 	private static final String secretKey = "pR0!3c7-3@g13";
 
 	public Employee getEmployee(String id) {
-		selectDatabase();
 		String sql = "Select EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,"
 				+ "WORKLOC,CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID"
 				+ " from employee where EMPID = ?";
-		
+
 		return jdbcTemplate.queryForObject(sql, employeeMapper, new Integer(id));
 	}
 
 	public List<Employee> getEmployees() {
-		selectDatabase();
-		
 		String sql = "Select EMPID, NAME,STATUS,TENURE,PHONE,EMAIL,JOINING_DATE,WORKLOC,"
 				+ "CURRENTLOC,HOMELOC,ISRELOCATE,ROLEID,VERTICALID,ACCOUNTID from employee";
 
@@ -107,8 +69,7 @@ public class EmployeeDAOImpl implements EmployeeDao {
 	};
 
 	public int saveEmployee(final Employee employee) throws SQLException, ParseException {
-		selectDatabase();
-		
+		System.out.println("Query employees: platform->" + platform);
 		Integer generatedId = null;
 		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		/*
@@ -171,7 +132,7 @@ public class EmployeeDAOImpl implements EmployeeDao {
 		 * " CURRENTLOC = ?, HOMELOC = ?, ISRELOCATE = CAST(? AS ISRELOCATE)," +
 		 * " ROLEID = ?, VERTICALID = ?, ACCOUNTID = ? WHERE EMPID = ?";
 		 */
-		selectDatabase();
+
 		String sql = "UPDATE employee SET  NAME = ?, STATUS = ?, "
 				+ " TENURE = ?, PHONE = ?, EMAIL = ?, JOINING_DATE = ?, WORKLOC = ?, "
 				+ " CURRENTLOC = ?, HOMELOC = ?, ISRELOCATE = ?,"
@@ -200,19 +161,18 @@ public class EmployeeDAOImpl implements EmployeeDao {
 	}
 
 	public boolean deleteEmployee(String empid) throws SQLException {
-		selectDatabase();
 		String query = "DELETE from employee where EMPID = ?";
 		int rows = jdbcTemplate.update(query, new Object[] { new Integer(empid) });
 		return rows == 1;
 	}
 
 	public boolean delAllEmployees() {
-		selectDatabase();
 		String query = "DELETE from employee";
 		int rows = jdbcTemplate.update(query);
 
 		return true;
 
 	}
+
 	
 }
