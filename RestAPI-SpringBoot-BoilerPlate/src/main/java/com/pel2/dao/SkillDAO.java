@@ -14,10 +14,8 @@ import org.springframework.stereotype.Component;
  * @author JOSEPH
  */
 public interface SkillDAO {
-//    public List<Skill> getAllSkills();
-//    public void updateSkill();
-//    public void deleteSkill();
-//    public Skill addSkill(Skill skill);
-//    
-    
+    public List<Skill> getAllSkills();
+    public void updateSkill();
+    public void deleteSkill();
+    public Skill addSkill(Skill skill);
 }

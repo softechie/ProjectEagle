@@ -5,6 +5,10 @@
  */
 package com.pel2.dto;
 
+import org.springframework.data.couchbase.core.mapping.Document;
+import org.springframework.stereotype.Component;
+
+import com.couchbase.client.java.repository.annotation.Field;
 import com.couchbase.client.java.repository.annotation.Id;
 
 /**
@@ -12,16 +16,21 @@ import com.couchbase.client.java.repository.annotation.Id;
  * @author JOSEPH
  */
 
+@Component
+@Document
 public class Skill {
+	
+	@Id
+	@Field
+    private String id;
+	
+	@Field
     private String name;
     
-    @Id
-    private int id;
-
     public Skill() {
     }
 
-    public Skill(String name, int id) {
+    public Skill(String name, String id) {
         this.name = name;
         this.id = id;
     }
@@ -34,11 +43,11 @@ public class Skill {
         this.name = name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     

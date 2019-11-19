@@ -1,12 +1,13 @@
 package com.pel2.dao.impl.hibernate;
 
-import com.pel2.dto.Employee;
 import com.pel2.encryption.AES;
 import enums.EnumIsRelocate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.sql.*;
 import java.text.DateFormat;
@@ -14,10 +15,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Optional;
 
+@Component
+//@Service
 public class CandidateDaoHibernate {
 
-    @Autowired
-    private CandidateRepository candidateRepository;
+//    @Autowired
+//    private CandidateRepository candidateRepository;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

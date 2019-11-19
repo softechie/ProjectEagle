@@ -7,14 +7,17 @@ package com.pel2.dao.impl.couchbase;
 
 import com.pel2.dto.Skill;
 import java.util.List;
+
 import org.springframework.data.couchbase.repository.CouchbaseRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 
 /**
  *
  * @author JOSEPH
  */
+
+@Repository
 public interface SkillRepo extends CouchbaseRepository<Skill, String>{
     public List<Skill> findAll();
     
