@@ -45,13 +45,6 @@
 			</properties>
 		</profile>
 
-		<profile>
-			<id>couchbase</id>
-			<properties>
-				<build.profile.id>couchbase</build.profile.id>
-				<profileActive>couchbase</profileActive>
-			</properties>
-		</profile>
 	</profiles>
 
 
