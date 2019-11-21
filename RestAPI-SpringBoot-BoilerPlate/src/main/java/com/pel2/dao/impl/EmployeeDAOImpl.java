@@ -20,7 +20,7 @@ import java.util.List;
 
 //Made service to make sure that EmployeeDao uses this implementation in @Autowires
 @Component
-@Service
+//@Service
 public class EmployeeDAOImpl implements EmployeeDao {
 
 	@Autowired
