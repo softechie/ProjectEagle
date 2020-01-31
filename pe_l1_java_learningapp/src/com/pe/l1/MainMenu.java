@@ -2,6 +2,7 @@ package com.pe.l1;
 
 import com.pe.l1.designPatterns.DesignPattMenu;
 import com.pe.l1.exception_Handling.ExceptionMenu;
+import com.pe.l1.java11.Java11Menu;
 import com.pe.l1.java8.Java8Menu;
 import com.pe.l1.memoryManagment.MemoryMenu;
 import com.pe.l1.misc.MiscSubMenu;
@@ -31,7 +32,8 @@ public class MainMenu {
                             "  4) Java 8 \n" +
                             "  5) Design Pattern Examples \n" +
                             "  6) Misc \n" +
-                            "  7) Exit"  
+                            "  7) Java 11 \n" +
+                            "  8) Exit"  
                               
             );
            //IDIOM: Item-0450: Move local variable declarations to where they are used
@@ -65,6 +67,8 @@ public class MainMenu {
                     MiscSubMenu.subMenu();
                     break;
                 case 7:
+                	Java11Menu.subMenu();
+                case 8:
                     System.out.println("Exiting system.");
                     System.exit(1);
                     break;
