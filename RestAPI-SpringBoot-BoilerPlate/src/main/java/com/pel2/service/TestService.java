@@ -12,7 +12,6 @@ import com.pel2.dao.SkillDAO;
 import com.pel2.dto.Employee;
 import java.text.ParseException;
 import com.pel2.dto.Skill;
-import org.springframework.stereotype.Component;
 
 /**
  * @author mbaransln Add the business logic in this class if any and give a call
@@ -26,7 +25,7 @@ public class TestService {
 	 * data from DB. Currently it is retrieving the data from the simulator class
 	 * "TestDataSimulator"
 	 */
-//	@Autowired
+	// @Autowired
 	// TestDataSimulator employeeDao;
 	@Autowired
 	EmployeeDao employeeDao;

@@ -11,14 +11,13 @@ import java.util.List;
 import org.springframework.data.couchbase.repository.CouchbaseRepository;
 import org.springframework.stereotype.Repository;
 
-
 /**
  *
  * @author JOSEPH
  */
 
 @Repository
-public interface SkillRepo extends CouchbaseRepository<Skill, String>{
+public interface SkillRepo extends CouchbaseRepository<Skill, String> {
     public List<Skill> findAll();
-    
+
 }
