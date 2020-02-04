@@ -1,8 +1,18 @@
-/target/
-.classpath
+**/target
 
 #sts ide
 **/.settings
-/bin
-.factorypath
+**/bin
+*.factorypath
 *.project
+*.classpath
+
+#vscode editor
+*maven-wrapper.jar
+*jvm.config
+**/.vscode
+**/.sts4-cache
+
+#intellij
+**/.idea
+**/*.iml
