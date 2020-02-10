@@ -13,8 +13,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<!-- <version>1.4.1.RELEASE</version> -->
-		<version>2.2.4.RELEASE</version>
+		<version>1.4.1.RELEASE</version>
+		<!-- <version>2.2.4.RELEASE</version> -->
 	</parent>
 
 	<properties>
@@ -54,18 +54,17 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<!-- dependency for hibernate -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
 		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-dependencies</artifactId>
@@ -270,6 +269,24 @@
 								<descriptor>${basedir}/assembly.xml</descriptor>
 							</descriptors>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>5.3.0</version>
+				<configuration>
+					<!-- Sets the number of hours to wait before checking for new updates from the NVD (168hr = 7 days)-->
+					<cveValidForHours>168</cveValidForHours>
+					<!-- Specific that if any vulnerability is identified, the build will fail. -->
+					<failBuildOnAnyVulnerability>true</failBuildOnAnyVulnerability>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
