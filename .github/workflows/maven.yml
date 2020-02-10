@@ -20,4 +20,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Verify and Build with Maven
-      run: mvn clean verify --file pom.xml
+      run: cd RestAPI-SpringBoot-BoilerPlate && mvn clean verify --file pom.xml
