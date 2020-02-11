@@ -273,14 +273,30 @@
 				</executions>
 			</plugin>
 			<plugin>
+				<groupId>com.redhat.victims.maven</groupId>
+				<artifactId>security-versions</artifactId>
+				<version>1.0.6</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
 				<version>5.3.0</version>
 				<configuration>
 					<!-- Sets the number of hours to wait before checking for new updates from the NVD (168hr = 7 days)-->
 					<cveValidForHours>168</cveValidForHours>
-					<!-- Specific that if any vulnerability is identified, the build will fail. -->
-					<failBuildOnAnyVulnerability>true</failBuildOnAnyVulnerability>
+					<!--  a score of 4.0-6.9 is a "Medium" severity level -->
+					<failBuildOnCVSS>4</failBuildOnCVSS>
+					<ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+					<suppressionFiles>
+						<suppressionFile>suppressions.xml</suppressionFile>
+					</suppressionFiles>
 				</configuration>
 				<executions>
 					<execution>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <suppress>
+        <notes>
+            <![CDATA[
+   file name: core-io-1.7.11.jar (shaded: io.netty:netty-all:4.0.56.Final)
+   ]]>
+        </notes>
+        <sha1>9b20dedb3ef2ee68bf3559cb1cd30bad9e2293e7</sha1>
+        <cpe>cpe:/a:netty:netty</cpe>
+    </suppress>
+</suppressions>
