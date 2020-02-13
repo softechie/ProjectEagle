@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 //import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.pel2.dto.Employee;
-import com.pel2.dto.Skill;
+// import com.pel2.dto.Skill;
 import com.pel2.service.TestService;
 
 //import io.vertx.core.json.JsonObject;
@@ -39,9 +39,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 public class TestController {
 
-//    @Autowired
-//    private EmployeeRepository employeeRepository;
-	
+	// @Autowired
+	// private EmployeeRepository employeeRepository;
+
 	// Service class implements the Business logic and interact with other
 	// services/DAO based on the requirement.
 	@Autowired
@@ -77,10 +77,10 @@ public class TestController {
 	 * }
 	 */
 
-	@RequestMapping(value = "/skills", method = RequestMethod.GET)
-	public List<Skill> getSkills() {
-		return (List<Skill>) testService.getSkills();
-	}
+	// @RequestMapping(value = "/skills", method = RequestMethod.GET)
+	// public List<Skill> getSkills() {
+	// return (List<Skill>) testService.getSkills();
+	// }
 
 	// To insert only one record
 	@PostMapping(value = "/emp")

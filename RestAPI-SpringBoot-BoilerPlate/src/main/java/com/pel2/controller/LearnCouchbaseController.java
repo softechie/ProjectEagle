@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pel2.dto.Airport;
 import com.pel2.dto.Employee;
-import com.pel2.dto.Skill;
 import com.pel2.service.LearnCouchbaseService;
 import com.pel2.service.TestService;
 
@@ -30,30 +29,25 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-
 /**
- * @author softechie (Suresh V)
- * Controller with end points to learn all different operations of using Couchbase NoSQL DB 
+ * @author softechie (Suresh V) Controller with end points to learn all
+ *         different operations of using Couchbase NoSQL DB
  *
  */
 @RestController
 @CrossOrigin
-@RequestMapping( value = "/learnCB")
-public class LearnCouchbaseController {	
+@RequestMapping(value = "/learnCB")
+public class LearnCouchbaseController {
 
+    @Autowired
+    LearnCouchbaseService learnCBService;
 
-	@Autowired
-	LearnCouchbaseService learnCBService;
-
-    
     @RequestMapping(value = "/getAllRecordsFromBucket", method = RequestMethod.GET)
     public List<Airport> getAllFromBucket() {
-    	List<Airport> results = learnCBService.getAllAirports();
-    	    System.out.println("LearnCouchbaseController:getAllFromBucket() - Returned Results = "+results.toString());
-    	    
-            return results;
-    }   
-   
+        List<Airport> results = learnCBService.getAllAirports();
+        System.out.println("LearnCouchbaseController:getAllFromBucket() - Returned Results = " + results.toString());
+
+        return results;
+    }
+
 }
-
-

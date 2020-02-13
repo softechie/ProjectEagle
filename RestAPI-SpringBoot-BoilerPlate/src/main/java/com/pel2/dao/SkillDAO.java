@@ -5,7 +5,7 @@
  */
 package com.pel2.dao;
 
-import com.pel2.dto.Skill;
+// import com.pel2.dto.Skill;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Component;
  *
  * @author JOSEPH
  */
-public interface SkillDAO {
-    public List<Skill> getAllSkills();
-    public void updateSkill();
-    public void deleteSkill();
-    public Skill addSkill(Skill skill);
-}
+// public interface SkillDAO {
+// public List<Skill> getAllSkills();
+// public void updateSkill();
+// public void deleteSkill();
+// public Skill addSkill(Skill skill);
+// }

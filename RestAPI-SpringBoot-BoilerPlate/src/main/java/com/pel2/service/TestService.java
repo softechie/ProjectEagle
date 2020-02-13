@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.pel2.dao.TestDataSimulator;
 import com.pel2.dao.EmployeeDao;
-import com.pel2.dao.SkillDAO;
+// import com.pel2.dao.SkillDAO;
 import com.pel2.dto.Employee;
 import java.text.ParseException;
-import com.pel2.dto.Skill;
+// import com.pel2.dto.Skill;
 import org.springframework.stereotype.Component;
 
 /**
@@ -26,13 +26,13 @@ public class TestService {
 	 * data from DB. Currently it is retrieving the data from the simulator class
 	 * "TestDataSimulator"
 	 */
-//	@Autowired
+	// @Autowired
 	// TestDataSimulator employeeDao;
 	@Autowired
 	EmployeeDao employeeDao;
 
-	@Autowired
-	SkillDAO skillDAO;
+	// @Autowired
+	// SkillDAO skillDAO;
 
 	/**
 	 * Add the business logic if any for get Employees.
@@ -69,9 +69,9 @@ public class TestService {
 	 * return employeeDao.addAllEmployee(emp); }
 	 */
 
-	public List<Skill> getSkills() {
-		// return (List<Skill>) skillRepo.findAll();
-		return skillDAO.getAllSkills();
-	}
+	// public List<Skill> getSkills() {
+	// // return (List<Skill>) skillRepo.findAll();
+	// return skillDAO.getAllSkills();
+	// }
 
 }

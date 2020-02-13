@@ -16,40 +16,39 @@ import com.couchbase.client.java.repository.annotation.Id;
  * @author JOSEPH
  */
 
-@Component
-@Document
-public class Skill {
-	
-	@Id
-	@Field
-    private String id;
-	
-	@Field
-    private String name;
-    
-    public Skill() {
-    }
+// @Component
+// @Document
+// public class Skill {
 
-    public Skill(String name, String id) {
-        this.name = name;
-        this.id = id;
-    }
+// @Id
+// @Field
+// private String id;
 
-    public String getName() {
-        return name;
-    }
+// @Field
+// private String name;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+// public Skill() {
+// }
 
-    public String getId() {
-        return id;
-    }
+// public Skill(String name, String id) {
+// this.name = name;
+// this.id = id;
+// }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-    
-    
-}
+// public String getName() {
+// return name;
+// }
+
+// public void setName(String name) {
+// this.name = name;
+// }
+
+// public String getId() {
+// return id;
+// }
+
+// public void setId(String id) {
+// this.id = id;
+// }
+
+// }

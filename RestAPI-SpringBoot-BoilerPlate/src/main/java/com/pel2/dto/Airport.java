@@ -19,34 +19,38 @@ import lombok.Data;
  * @author softechie (Suresh V)
  */
 
+@Component
+@Document
 @Data
 public class Airport {
-	
+
 	@Id
-    private String id;
-	
+	@Field
+	private String id;
+	@Field
 	private String airportname;
+	@Field
 	private String city;
+	@Field
 	private String country;
+	@Field
 	private String faa;
+	@Field
 	private Map geo;
+	@Field
 	private String icao;
-	
 	@Field("tz")
 	private String timezone;
-	
+	@Field
 	private String type;
-    
-  	public Airport() {
-    }
-  	
-  	public String toString() {
-  		String printBean = "type="+type+" id="+id+" airportname="+airportname+
-  				" city="+city+" country="+country+" faa="+faa+" icao="+icao+" tz="+timezone
-  				+"geo ="+geo.toString();
-  		return printBean;
-  	}
-  	
-  }
-  	  
 
+	public Airport() {
+	}
+
+	public String toString() {
+		String printBean = "type=" + type + " id=" + id + " airportname=" + airportname + " city=" + city + " country="
+				+ country + " faa=" + faa + " icao=" + icao + " tz=" + timezone + "geo =" + geo.toString();
+		return printBean;
+	}
+
+}
