@@ -1,0 +1,8 @@
+/target/
+.classpath
+
+#sts ide
+**/.settings
+/bin
+.factorypath
+*.project
