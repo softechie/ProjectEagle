@@ -36,7 +36,7 @@ public static void subMenu() {
 					              		              + "  5) StripLeading \n"
 						                              + "  6) StripTrailing\n"
 						                              + "  7) LambdaExpression\n"
-							                          +  " 8) Repeate \n"
+							                          + "  8) Repeate \n"
 						                              + "  9) AsMatchPredicat\n"
 							                          + "  10) Files\n"
 						                              + "  11) Back to Main Menu");
